@@ -88,7 +88,6 @@ public abstract class MyBaseActivity extends IBaseActivity implements ProgressLa
     private View status_bar, v_bottom_line;
     private boolean hiddenBottomLine;
     protected PtrClassicFrameLayout pcfl;
-    protected boolean isStop;
     protected boolean noSetTheme;
     protected ProgressLayout pl_load;
     /****************************************************/
@@ -102,26 +101,11 @@ public abstract class MyBaseActivity extends IBaseActivity implements ProgressLa
 
     protected void initRxBus() {
     }
-    protected void myReStart() {
-    }
     protected void getOtherData(){};
     protected void getData(int page, boolean isLoad) {
     }
     protected void setClickListener(){};
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        isStop =true;
-    }
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if(isStop){
-            isStop =false;
-            myReStart();
-        }
-    }
     protected void hiddenBottomLine() {
         hiddenBottomLine = true;
         if (v_bottom_line != null) {

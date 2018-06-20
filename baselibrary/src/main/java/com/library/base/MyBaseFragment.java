@@ -62,9 +62,6 @@ public abstract class MyBaseFragment extends IBaseFragment implements View.OnCli
     protected abstract void initData();
     protected abstract void onViewClick(View v);
     protected void initRxBus(){};
-    protected boolean isStop;
-    protected void myReStart() {
-    }
     protected void getOtherData(){};
     protected void getData(int page,boolean isLoad){};
     protected Unbinder mUnBind;
@@ -106,32 +103,6 @@ public abstract class MyBaseFragment extends IBaseFragment implements View.OnCli
         initRxBus();
         isPrepared=true;
         setUserVisibleHint(true);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        isStop =true;
-    }
-
-    @Override
-    public void onHiddenChanged(boolean hidden) {
-        super.onHiddenChanged(hidden);
-        if(hidden){
-            isStop =true;
-        }else{
-            isStop =false;
-            myReStart();
-        }
-    }
-    @Override
-    public void onResume() {
-        super.onResume();
-        if(isStop){
-            isStop =false;
-            myReStart();
-        }
     }
     public void showProgress(){
         if (pl_load != null) {
