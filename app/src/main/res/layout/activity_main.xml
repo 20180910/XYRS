@@ -1,19 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.sk.xyrs.MainActivity">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/gray_f6"
+                android:fitsSystemWindows="true"
+    >
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/line1"
+        ></FrameLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_above="@+id/rg_main"
+        android:background="@color/gray_d7"/>
+
+    <RadioGroup
+        android:id="@+id/rg_main"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
 
-</android.support.constraint.ConstraintLayout>
+        <com.github.fastshape.MyRadioButton
+            android:id="@+id/rb_home_tab1"
+            style="@style/radio_home"
+            android:checked="true"
+            android:text="主页"
+            app:checked_drawable="@drawable/home_tab1_select"
+            app:checked_textColor="@color/home_text_color"
+            app:drawable_direction="top"
+            app:normal_drawable="@drawable/home_tab1_normal"
+            app:normal_textColor="@color/gray_99"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:drawablePadding="3dp"
+            />
+
+        <com.github.fastshape.MyRadioButton
+            android:id="@+id/rb_home_tab2"
+            style="@style/radio_home"
+            android:text="发现"
+            app:checked_drawable="@drawable/home_tab2_select"
+            app:checked_textColor="@color/home_text_color"
+            app:drawable_direction="top"
+            app:normal_drawable="@drawable/home_tab2_normal"
+            app:normal_textColor="@color/gray_99"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:drawablePadding="3dp"
+            />
+
+        <ImageButton
+            android:id="@+id/rb_home_tab3"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/home_tab3_select"
+            android:background="@color/transparent"
+            />
+        <com.github.fastshape.MyRadioButton
+            android:id="@+id/rb_home_tab4"
+            style="@style/radio_home"
+            android:text="笔友会"
+
+            app:checked_drawable="@drawable/home_tab4_select"
+            app:checked_textColor="@color/home_text_color"
+            app:drawable_direction="top"
+            app:normal_drawable="@drawable/home_tab4_normal"
+            app:normal_textColor="@color/gray_99"
+
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:drawablePadding="3dp"
+            />
+        <com.github.fastshape.MyRadioButton
+            android:id="@+id/rb_home_tab5"
+            style="@style/radio_home"
+            android:text="我的"
+
+            app:checked_drawable="@drawable/home_tab5_select"
+            app:checked_textColor="@color/home_text_color"
+            app:drawable_direction="top"
+            app:normal_drawable="@drawable/home_tab5_normal"
+            app:normal_textColor="@color/gray_99"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:drawablePadding="3dp"
+            />
+    </RadioGroup>
+</RelativeLayout>

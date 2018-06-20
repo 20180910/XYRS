@@ -6,7 +6,8 @@
     <color name="colorPrimaryDark1">#87ceeb</color>
     <color name="colorAccent">#848484</color>
 
-
+    <!--home主页-->
+    <color name="title_color">#FF0E5F1B</color>
     <color name="theme_color">#3a92e9</color>
     <color name="press_theme_color">#419BF3</color>
     <color name="gray_f6">#f6f6f6</color>
@@ -27,7 +28,13 @@
     <color name="green2">#22ddb0</color>
     <color name="green_qian">#E6F9F7</color>
     <color name="gray_ban">#50000000</color>
+    <!--found发现-->
 
+    <!--contribute投稿-->
+
+    <!--biyou笔友会-->
+
+    <!--my我的-->
 
     <color name="home_green">#06C1AE</color>
     <color name="home_text_color">#419BF3</color>
@@ -69,33 +76,4 @@
     <color name="c_divider">#E2E2E2</color>
     <color name="c_press">#E2E2E2</color>
     <color name="c_press_bt">#41A5D6</color>
-    <color name="blue_point">#18B4ED</color>
-    <color name="blue_comment">#00659f</color>
-    <color name="red_point">#990814</color>
-    <color name="red_point1">#DE2F24</color>
-    <!-- 主题颜色-->
-    <color name="top_color1">#20000000</color>
-    <color name="top_color2">#FFCECBCB</color>
-
-    <color name="top_color">#fd4b4d</color>
-    <color name="image_checked_bg">#66000000</color>
-
-    <!-- 黑色 -->
-    <color name="button_ensure">#ff6000</color>
-    <color name="cutting_line">#dfdfdf</color>
-    <color name="orange_0">#FF8111</color>
-    <color name="wheel_unselect_text">#c2c1c1</color>
-    <color name="wheel_bg">#f2f2f2</color>
-    <color name="common_line">#D1D1D1</color>
-
-    <color name="black_overlay">#66000000</color>
-
-    <color name="active_dianying1">#E2D6FF</color>
-    <color name="active_dianying2">#774FD3</color>
-
-    <color name="active_lipin1">#AFFFB6</color>
-    <color name="active_lipin2">#41D54E</color>
-
-    <color name="active_fanxian1">#B4F1FF</color>
-    <color name="active_fanxian2">#2ECBED</color>
 </resources>

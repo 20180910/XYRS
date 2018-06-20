@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.BitmapEncoder;
-import com.sk.maiqian.R;
+import com.sk.xyrs.R;
 
 /**
  * Created by Administrator on 2018/3/21.
