@@ -17,7 +17,7 @@ public class TablayoutUtils {
     public static void setTabWidth(final TabLayout tabLayout){
         setTabWidth(tabLayout,10);
     }
-    public static void setTabWidth(final TabLayout tabLayout,int margin){
+    public static void setTabWidth(final TabLayout tabLayout,final int margin){
         //了解源码得知 线的宽度是根据 tabView的宽度来设置的
         tabLayout.post(new Runnable() {
             @Override
