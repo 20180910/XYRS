@@ -36,9 +36,17 @@
 
     <!--my我的-->
 
-    <color name="my_login_border">#FFB3E994</color>
+  <!--  <color name="my_login_border">#FFB3E994</color>
     <color name="my_login_hinttext">#9CD2A5</color>
-    <color name="my_login_text">#4CA759</color>
+    <color name="my_login_text">#4CA759</color>-->
+    <color name="my_login_border">#FFB3E994</color>
+
+    <color name="theme_text1">#0c5e19</color>
+    <color name="theme_text2">#239936</color>
+    <color name="theme_text3">#3cc051</color>
+    <color name="hint_text">#9CD2A5</color>
+    <color name="theme_text4">#ceefd4</color>
+    <color name="theme_text5">#f0fbf1</color>
 
     <color name="home_green">#06C1AE</color>
     <color name="home_text_color">#419BF3</color>
