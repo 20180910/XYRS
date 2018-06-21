@@ -4,7 +4,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:background="@color/background_f2"
+              android:background="@color/background_d"
     >
 <com.github.fastshape.MyTextView
     android:id="@+id/app_tv_select_photo"

@@ -162,23 +162,40 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
                     >
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        />
                 <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/qq"
                     />
-                    <ImageView
+                    <View
                         android:layout_width="0dp"
                         android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        />
+                    <ImageView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/wechat"
                         />
-                    <ImageView
+                    <View
                         android:layout_width="0dp"
                         android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        />
+                    <ImageView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/weibo"
+                        />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
                         />
                 </LinearLayout>
                 <TextView

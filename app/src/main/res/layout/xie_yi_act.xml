@@ -7,20 +7,17 @@
               android:background="@color/white"
     >
 <include layout="@layout/app_title"/>
-    <com.library.base.ProgressLayout
-        android:id="@id/pl_load"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
+    <android.support.v4.widget.NestedScrollView
+            android:id="@id/nsv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@color/white"
+            android:layout_height="wrap_content"
             >
-            <!--your view-->
-
-
-
-        </LinearLayout>
-    </com.library.base.ProgressLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

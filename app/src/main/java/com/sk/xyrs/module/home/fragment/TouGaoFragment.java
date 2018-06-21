@@ -3,6 +3,7 @@ package com.sk.xyrs.module.home.fragment;
 import android.os.Bundle;
 import android.view.View;
 
+import com.sk.xyrs.R;
 import com.sk.xyrs.base.BaseFragment;
 
 /**
@@ -12,7 +13,7 @@ import com.sk.xyrs.base.BaseFragment;
 public class TouGaoFragment extends BaseFragment {
     @Override
     protected int getContentView() {
-        return 0;
+        return R.layout.my_frag;
     }
 
     public static TouGaoFragment newInstance() {

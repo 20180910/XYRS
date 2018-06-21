@@ -292,7 +292,7 @@ public abstract class MyBaseActivity extends IBaseActivity implements ProgressLa
             if (navigationIcon != -1) {
                 getSupportActionBar().setHomeAsUpIndicator(navigationIcon);
             } else {
-                getSupportActionBar().setHomeAsUpIndicator(R.drawable.app_back);
+                getSupportActionBar().setHomeAsUpIndicator(R.drawable.app_back_green);
 //                getSupportActionBar().setHomeAsUpIndicator(R.drawable.app_back_black);
             }
             getSupportActionBar().setDisplayHomeAsUpEnabled(showNavigationIcon);

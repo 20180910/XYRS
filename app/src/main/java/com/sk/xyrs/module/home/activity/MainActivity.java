@@ -85,7 +85,7 @@ public class MainActivity extends BaseActivity {
         setTabClickListener();
 
         setBroadcast();
-        STActivity(LoginActivity.class);
+//        STActivity(LoginActivity.class);
     }
 
 

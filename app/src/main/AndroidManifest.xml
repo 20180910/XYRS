@@ -71,6 +71,11 @@
             android:configChanges="orientation|keyboardHidden">
         </activity>
         <activity android:name=".module.my.activity.LoginActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".module.my.activity.UnBindPhoneActivity"/>
+        <activity android:name=".module.my.activity.FindPWDActivity"/>
+        <activity android:name=".module.my.activity.InputPhoneActivity"/>
+        <activity android:name=".module.my.activity.XieYiActivity"/>
+        <activity android:name=".module.my.activity.InterstingActivity"/>
 
 
     </application>
