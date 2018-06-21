@@ -56,18 +56,26 @@
             android:textSize="16sp"
             />
 
-        <LinearLayout
+        <com.github.fastshape.MyLinearLayout
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:background="@color/white"
             android:gravity="center_vertical"
             android:orientation="horizontal"
+            android:layout_margin="30dp"
+            app:solidColor="@color/white"
+            app:borderColor="@color/my_login_border"
+            app:all_line="true"
+            app:radius="3dp"
+            android:paddingRight="10dp"
+            app:borderWidth="1px"
             >
-
             <com.github.fastshape.MyTextView
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:text="+86"
+                android:gravity="center"
+                android:textColor="@color/my_login_text"
+                android:textSize="15sp"
                 />
 
             <com.github.fastshape.MyEditText
@@ -76,16 +84,48 @@
                 android:gravity="center_vertical"
                 android:imeOptions="actionNext"
                 android:inputType="text"
-                android:text="123"
-                android:textColor="?attr/editTextColor"
+                android:textSize="15sp"
+                android:textColor="@color/my_login_text"
+                android:textColorHint="@color/my_login_hinttext"
+                android:hint="请输入手机号"
                 />
 
-        </LinearLayout>
-        <EditText
+        </com.github.fastshape.MyLinearLayout>
+        <com.github.fastshape.MyLinearLayout
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:text="1123"
-            android:background="@color/red"
-            />
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:solidColor="@color/white"
+            app:borderColor="@color/my_login_border"
+            app:all_line="true"
+            app:radius="3dp"
+            android:paddingRight="10dp"
+            app:borderWidth="1px"
+            >
+            <com.github.fastshape.MyTextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="+86"
+                android:gravity="center"
+                android:textColor="@color/my_login_text"
+                android:textSize="15sp"
+                />
+
+            <com.github.fastshape.MyEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:textSize="15sp"
+                android:textColor="@color/my_login_text"
+                android:textColorHint="@color/my_login_hinttext"
+                android:hint="请输入手机号"
+                />
+
+        </com.github.fastshape.MyLinearLayout>
     </LinearLayout>
 </LinearLayout>

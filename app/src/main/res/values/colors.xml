@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#18B4ED</color>
     <color name="colorPrimaryDark2">#18B4ED</color>
     <color name="colorPrimaryDark1">#87ceeb</color>
-    <color name="colorAccent">#848484</color>
+    <color name="colorAccent">#9CD2A5</color>
 
     <!--home主页-->
     <color name="title_color">#FF0E5F1B</color>
@@ -35,6 +35,10 @@
     <!--biyou笔友会-->
 
     <!--my我的-->
+
+    <color name="my_login_border">#FFB3E994</color>
+    <color name="my_login_hinttext">#9CD2A5</color>
+    <color name="my_login_text">#4CA759</color>
 
     <color name="home_green">#06C1AE</color>
     <color name="home_text_color">#419BF3</color>
