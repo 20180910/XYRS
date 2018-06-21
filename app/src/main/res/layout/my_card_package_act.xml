@@ -16,11 +16,109 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:background="@color/white"
+            android:padding="13dp"
             >
             <!--your view-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="10dp"
+                >
+                <com.github.fastshape.MyLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    app:solidColor="@color/theme_text5"
+                    android:padding="13dp"
+                    app:radius="10dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="推荐卡"
+                        android:textColor="@color/theme_text2"
+                        android:textSize="19sp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="累计数量：3"
+                        android:textColor="@color/theme_text2"
+                        android:textSize="14sp"
+                        android:layout_marginTop="15dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="使用期限：永久"
+                        android:textColor="@color/theme_text2"
+                        android:textSize="14sp"
+                        android:layout_marginTop="10dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*使用后推荐一篇文章到全站"
+                        android:textColor="@color/theme_text2"
+                        android:textSize="14sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="right"
+                        />
+                </com.github.fastshape.MyLinearLayout>
+            </android.support.v7.widget.CardView>
 
-
-
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginTop="20dp"
+                >
+                <com.github.fastshape.MyLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    app:solidColor="@color/card_package"
+                    android:padding="13dp"
+                    app:radius="10dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="推荐卡"
+                        android:textColor="@color/theme_text2"
+                        android:textSize="19sp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="累计数量：3"
+                        android:textColor="@color/theme_text2"
+                        android:textSize="14sp"
+                        android:layout_marginTop="15dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="使用期限：永久"
+                        android:textColor="@color/theme_text2"
+                        android:textSize="14sp"
+                        android:layout_marginTop="10dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*使用后推荐一篇文章到全站"
+                        android:textColor="@color/theme_text2"
+                        android:textSize="14sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="right"
+                        />
+                </com.github.fastshape.MyLinearLayout>
+            </android.support.v7.widget.CardView>
         </LinearLayout>
     </com.library.base.ProgressLayout>
 </LinearLayout>

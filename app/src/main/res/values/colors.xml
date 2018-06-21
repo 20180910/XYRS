@@ -35,6 +35,7 @@
 
     <!--my我的-->
 
+    <color name="card_package">#F6F6FA</color>
   <!--  <color name="my_login_border">#FFB3E994</color>
     <color name="my_login_hinttext">#9CD2A5</color>
     <color name="my_login_text">#4CA759</color>-->
