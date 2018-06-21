@@ -141,12 +141,12 @@ public class MainActivity extends BaseActivity {
                         }
                         break;
                     case 3:
-                        if (TextUtils.equals(noLoginCode, getUserId())) {
+                       /* if (TextUtils.equals(noLoginCode, getUserId())) {
                             STActivity(LoginActivity.class);
                             selectView.setChecked(true);
-                        } else {
+                        } else {*/
                             selectMy();
-                        }
+//                        }
                         break;
                 }
             }

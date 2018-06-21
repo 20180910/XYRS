@@ -2,9 +2,12 @@
 <resources>
     <color name="app_title">#2DDB97</color>
     <color name="app_right_title">#FF20D18C</color>
-    <color name="app_status">#419BF3</color>
-    <color name="app_bar">#419BF3</color>
-    <color name="theme_color">#419BF3</color>
+    <!--<color name="app_status">#419BF3</color>-->
+    <!--<color name="app_bar">#419BF3</color>-->
+
+    <color name="app_status">#ffffff</color>
+    <color name="app_bar">#ffffff</color>
+    <!--<color name="theme_color">#419BF3</color>-->
 
     <color name="app_bar2">#06C1AE</color>
 

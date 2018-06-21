@@ -76,6 +76,8 @@
         <activity android:name=".module.my.activity.InputPhoneActivity"/>
         <activity android:name=".module.my.activity.XieYiActivity"/>
         <activity android:name=".module.my.activity.InterstingActivity"/>
+        <activity android:name=".module.my.activity.MyFansActivity"/>
+        <activity android:name=".module.my.activity.MyCardPackageActivity"/>
 
 
     </application>

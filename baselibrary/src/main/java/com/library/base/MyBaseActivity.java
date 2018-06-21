@@ -180,7 +180,7 @@ public abstract class MyBaseActivity extends IBaseActivity implements ProgressLa
         mContext = this;
         if (getContentView() != 0) {
             setContentView(getContentView());
-            StatusBarUtils.setColor(this,ContextCompat.getColor(mContext,R.color.app_status),0);
+            StatusBarUtils.setColor(this,ContextCompat.getColor(mContext,R.color.app_status));
 //            View rootView = ((ViewGroup) this.findViewById(android.R.id.content))
 //                    .getChildAt(0);
 //            int navigationBarHeight = PhoneUtils.getNavigationBarHeight(mContext);
