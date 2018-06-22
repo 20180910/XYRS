@@ -28,11 +28,13 @@ public class MyRecyclerView extends RecyclerView {
         super(context, attrs, defStyle);
     }
 
-    @Override
     public void setAdapter(Adapter adapter) {
+        setAdapter(adapter,2);
+    }
+    public void setAdapter(Adapter adapter,int offset) {
         if (getLayoutManager() == null) {
             setLayoutManager(new LinearLayoutManager(getContext()));
-            addItemDecoration(new BaseDividerListItem(getContext(),2, R.color.background_f2));
+            addItemDecoration(new BaseDividerListItem(getContext(),offset,R.color.background_f2));
         }
         super.setAdapter(adapter);
     }

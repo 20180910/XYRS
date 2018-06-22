@@ -82,6 +82,9 @@
         <activity android:name=".module.my.activity.MyTuiJianActivity"/>
         <activity android:name=".module.my.activity.MyMessageActivity"/>
         <activity android:name=".module.my.activity.PersonHomeActivity"/>
+        <activity android:name=".module.my.activity.MyGuanZhuActivity"/>
+        <activity android:name=".module.my.activity.ChatActivity"/>
+        <activity android:name=".module.my.activity.ChongZhiXiaoFeiActivity"/>
 
 
     </application>
