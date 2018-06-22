@@ -15,10 +15,7 @@ import butterknife.BindView;
  */
 
 public class MyFansActivity extends BaseActivity  {
-    @BindView(R.id.rv_my_fans)
-    MyRecyclerView rv_my_fans;
 
-    MyAdapter adapter;
 
     @Override
     protected int getContentView() {
@@ -28,13 +25,7 @@ public class MyFansActivity extends BaseActivity  {
 
     @Override
     protected void initView() {
-        adapter=new MyAdapter(mContext,R.layout._item,pageSize) {
-            @Override
-            public void bindData(MyRecyclerViewHolder holder, int position, Object bean) {
 
-            }
-        };
-        adapter.setOnLoadMoreListener(this);
 
     }
 

@@ -53,7 +53,6 @@ public class MyFragment extends BaseFragment {
     protected void onViewClick(View v) {
         switch (v.getId()){
             case R.id.app_right_tv:
-
             break;
         }
     }

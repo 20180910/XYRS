@@ -6,15 +6,13 @@ import com.sk.xyrs.R;
 import com.sk.xyrs.base.BaseActivity;
 
 /**
- * Created by Administrator on 2018/6/21.
+ * Created by Administrator on 2018/6/22.
  */
 
-public class MyTuiJianActivity extends BaseActivity {
-
+public class PersonHomeActivity extends BaseActivity {
     @Override
     protected int getContentView() {
-        setAppRightTitle("我的推荐");
-        return R.layout.my_tuijian_act;
+        return R.layout.person_home_act;
     }
 
     @Override
