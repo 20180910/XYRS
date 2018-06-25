@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="57dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@color/white"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="张三"
+        android:textColor="@color/theme_text1"
+        android:textSize="17sp"
+        android:layout_marginRight="10dp"
+        />
+    <com.github.fastshape.MyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="一代文豪"
+        app:solidColor="@color/theme_text2"
+        android:textColor="@color/white"
+        app:radius="4dp"
+        android:padding="2dp"
+        android:layout_marginRight="10dp"
+        />
+    <com.github.fastshape.MyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="博览群书"
+        app:solidColor="@color/theme_text2"
+        android:textColor="@color/white"
+        app:radius="4dp"
+        android:padding="2dp"
+        />
+</LinearLayout>
+</LinearLayout>

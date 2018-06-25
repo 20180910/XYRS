@@ -85,6 +85,19 @@
         <activity android:name=".module.my.activity.MyGuanZhuActivity"/>
         <activity android:name=".module.my.activity.ChatActivity"/>
         <activity android:name=".module.my.activity.ChongZhiXiaoFeiActivity"/>
+        <activity android:name=".module.my.activity.PenPalDetailActivity"/>
+        <activity android:name=".module.my.activity.PenPalDataActivity"/>
+        <activity android:name=".module.my.activity.ChongZhiActivity"/>
+        <activity android:name=".module.my.activity.CityListActivity"/>
+        <activity android:name=".module.my.activity.AccountBindActivity"/>
+        <activity android:name=".module.my.activity.FaTieActivity"/>
+        <activity android:name=".module.my.activity.AboutAppActivity"/>
+        <activity android:name=".module.my.activity.SearchUserActivity"/>
+        <activity android:name=".module.my.activity.BlackListActivity"/>
+        <activity android:name=".module.my.activity.WhyCannotLoginActivity"/>
+        <activity android:name=".module.my.activity.LoginQuestionActivity"/>
+        <activity android:name=".module.my.activity.ScanActivity"/>
+        <activity android:name=".module.my.activity.SettingActivity"/>
 
 
     </application>
