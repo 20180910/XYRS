@@ -6,14 +6,14 @@ import com.sk.xyrs.R;
 import com.sk.xyrs.base.BaseActivity;
 
 /**
- * Created by Administrator on 2018/6/22.
+ * Created by Administrator on 2018/6/26.
  */
 
-public class PersonHomeActivity extends BaseActivity {
+public class RealNameAuthActivity extends BaseActivity {
     @Override
     protected int getContentView() {
-        setAppTitle("个人主页或者TA的主页");
-        return R.layout.person_home_act;
+        setAppTitle("实名认证");
+        return R.layout.real_name_auth_act;
     }
 
     @Override

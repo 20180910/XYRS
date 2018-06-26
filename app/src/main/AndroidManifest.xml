@@ -98,6 +98,8 @@
         <activity android:name=".module.my.activity.LoginQuestionActivity"/>
         <activity android:name=".module.my.activity.ScanActivity"/>
         <activity android:name=".module.my.activity.SettingActivity"/>
+        <activity android:name=".module.my.activity.RealNameAuthActivity"/>
+        <activity android:name=".module.my.activity.SearchBiHuiActivity"/>
 
 
     </application>
