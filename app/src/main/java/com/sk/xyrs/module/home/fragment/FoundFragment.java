@@ -13,7 +13,7 @@ import com.sk.xyrs.base.BaseFragment;
 public class FoundFragment extends BaseFragment {
     @Override
     protected int getContentView() {
-        return R.layout.my_frag;
+        return R.layout.found_frag;
     }
 
     public static FoundFragment newInstance() {

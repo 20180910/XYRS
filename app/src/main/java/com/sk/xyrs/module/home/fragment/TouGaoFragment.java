@@ -13,7 +13,7 @@ import com.sk.xyrs.base.BaseFragment;
 public class TouGaoFragment extends BaseFragment {
     @Override
     protected int getContentView() {
-        return R.layout.my_frag;
+        return R.layout.tou_gao_frag;
     }
 
     public static TouGaoFragment newInstance() {

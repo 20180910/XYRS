@@ -6,7 +6,6 @@
               android:layout_height="match_parent"
               android:background="@color/white"
     >
-<include layout="@layout/app_title"/>
     <com.library.base.ProgressLayout
         android:id="@id/pl_load"
         android:layout_width="match_parent"
@@ -43,9 +42,10 @@
                     android:textSize="15sp"
                     />
                 <com.github.fastshape.MyTextView
+                    android:id="@+id/tv_fatie"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="发帖"
+                    android:text="投稿"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
                     android:layout_centerVertical="true"
@@ -56,6 +56,21 @@
                     android:paddingBottom="5dp"
                     android:paddingTop="5dp"
                     app:radius="4dp"
+                    />
+                <com.github.fastshape.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="保存"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerVertical="true"
+                    app:solidColor="@color/theme_text2"
+                    android:textColor="@color/white"
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    app:radius="4dp"
+                    android:layout_toLeftOf="@+id/tv_fatie"
                     />
             </RelativeLayout>
            <View

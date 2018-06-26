@@ -103,6 +103,10 @@
         <activity android:name=".module.my.activity.TouGaoSettingActivity"/>
         <activity android:name=".module.my.activity.CompleteDataActivity"/>
         <activity android:name=".module.my.activity.YinSiSettingActivity"/>
+        <activity android:name=".module.contribute.activity.TouGaoActivity"/>
+        <activity android:name=".module.contribute.activity.CaoGaoActivity"/>
+        <activity android:name=".module.found.activity.FoundActivity"/>
+        <activity android:name=".module.found.activity.FoundResultActivity"/>
 
 
     </application>
