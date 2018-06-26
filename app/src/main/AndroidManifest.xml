@@ -100,6 +100,9 @@
         <activity android:name=".module.my.activity.SettingActivity"/>
         <activity android:name=".module.my.activity.RealNameAuthActivity"/>
         <activity android:name=".module.my.activity.SearchBiHuiActivity"/>
+        <activity android:name=".module.my.activity.TouGaoSettingActivity"/>
+        <activity android:name=".module.my.activity.CompleteDataActivity"/>
+        <activity android:name=".module.my.activity.YinSiSettingActivity"/>
 
 
     </application>

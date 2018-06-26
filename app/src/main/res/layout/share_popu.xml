@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/bg_color"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="分享至"
+        android:padding="10dp"
+        android:textColor="@color/gray_66"
+        android:textSize="15sp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/background_f2"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        >
+        <com.github.fastshape.MyTextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="微信好友"
+            android:drawableTop="@drawable/fenxiang_icon_weixin"
+
+            android:gravity="center"
+            android:textSize="14sp"
+            android:drawablePadding="10dp"
+            />
+        <com.github.fastshape.MyTextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="微信好友"
+            android:drawableTop="@drawable/fenxinag_icon_pengyouquan"
+
+            android:gravity="center"
+            android:textSize="14sp"
+            android:drawablePadding="10dp"
+            />
+        <com.github.fastshape.MyTextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="微信好友"
+            android:drawableTop="@drawable/fenxiang_icon_qq"
+
+            android:gravity="center"
+            android:textSize="14sp"
+            android:drawablePadding="10dp"
+            />
+        <com.github.fastshape.MyTextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="微信好友"
+            android:drawableTop="@drawable/fenxiang_icon_qqkongjian"
+
+            android:gravity="center"
+            android:textSize="14sp"
+            android:drawablePadding="10dp"
+            />
+        <com.github.fastshape.MyTextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="微信好友"
+            android:drawableTop="@drawable/fenxiang_icon_xinlang"
+
+            android:gravity="center"
+            android:textSize="14sp"
+            android:drawablePadding="10dp"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/background_f2"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:textSize="15sp"
+        android:text="取消"
+        android:gravity="center"
+        />
+</LinearLayout>
+</LinearLayout>

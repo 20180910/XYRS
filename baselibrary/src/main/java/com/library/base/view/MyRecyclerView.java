@@ -34,7 +34,7 @@ public class MyRecyclerView extends RecyclerView {
     public void setAdapter(Adapter adapter,int offset) {
         if (getLayoutManager() == null) {
             setLayoutManager(new LinearLayoutManager(getContext()));
-            addItemDecoration(new BaseDividerListItem(getContext(),offset,R.color.background_f2));
+            addItemDecoration(new BaseDividerListItem(getContext(),offset,R.color.divider_color));
         }
         super.setAdapter(adapter);
     }

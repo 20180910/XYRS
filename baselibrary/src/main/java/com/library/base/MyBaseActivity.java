@@ -408,11 +408,11 @@ public abstract class MyBaseActivity extends IBaseActivity implements ProgressLa
     }
 
     protected BaseDividerListItem getItemDivider() {
-        return new BaseDividerListItem(mContext,2, R.color.background_f2);
+        return new BaseDividerListItem(mContext,2, R.color.divider_color);
     }
 
     protected BaseDividerListItem getItemDivider(int height) {
-        return new BaseDividerListItem(mContext,height, R.color.background_f2);
+        return new BaseDividerListItem(mContext,height, R.color.divider_color);
     }
 
     protected BaseDividerListItem getItemDivider(int height, int color) {
