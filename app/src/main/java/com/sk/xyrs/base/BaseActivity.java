@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.support.annotation.DrawableRes;
 import android.support.design.widget.BottomSheetDialog;
 import android.text.TextUtils;
@@ -50,6 +51,13 @@ import io.reactivex.schedulers.Schedulers;
 public abstract class BaseActivity extends MyBaseActivity {
     protected final String TAG = this.getClass().getSimpleName();
     protected final String noLoginCode = "0";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setAppTitleColor(R.color.theme_text1);
+        setAppRightTitleColor(R.color.theme_text2);
+    }
 
     protected String getUserId() {
         return SPUtils.getString(mContext, AppXml.user_id, noLoginCode);

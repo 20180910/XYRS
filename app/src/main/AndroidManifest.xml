@@ -107,6 +107,9 @@
         <activity android:name=".module.contribute.activity.CaoGaoActivity"/>
         <activity android:name=".module.found.activity.FoundActivity"/>
         <activity android:name=".module.found.activity.FoundResultActivity"/>
+        <activity android:name=".module.biyou.activity.MakeBiHuiActivity"/>
+        <activity android:name=".module.biyou.activity.SelectLianZaiActivity"/>
+        <activity android:name=".module.biyou.activity.GuanLiChengYuanActivity"/>
 
 
     </application>

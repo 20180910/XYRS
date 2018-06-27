@@ -431,6 +431,40 @@
                 android:paddingLeft="10dp"
                 android:layout_marginBottom="2px"
                 />
+            <com.github.fastshape.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                app:left_width="17dp"
+                app:solidColor="@color/white"
+                android:text="我的浏览记录"
+                android:textSize="16sp"
+                android:textColor="@color/theme_text2"
+                android:drawableLeft="@drawable/wode_liulanjilu"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/jiantou_right2"
+                android:gravity="center_vertical"
+                android:layout_marginTop="2px"
+                android:paddingRight="13dp"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="2px"
+                />
+            <com.github.fastshape.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                app:left_width="17dp"
+                app:solidColor="@color/white"
+                android:text="我的帖子"
+                android:textSize="16sp"
+                android:textColor="@color/theme_text2"
+                android:drawableLeft="@drawable/wode_tiezi"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/jiantou_right2"
+                android:gravity="center_vertical"
+                android:layout_marginTop="2px"
+                android:paddingRight="13dp"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="2px"
+                />
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
