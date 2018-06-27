@@ -110,6 +110,8 @@
         <activity android:name=".module.biyou.activity.MakeBiHuiActivity"/>
         <activity android:name=".module.biyou.activity.SelectLianZaiActivity"/>
         <activity android:name=".module.biyou.activity.GuanLiChengYuanActivity"/>
+        <activity android:name=".module.biyou.activity.ShenPiActivity"/>
+        <activity android:name=".module.biyou.activity.OrderActivity"/>
 
 
     </application>

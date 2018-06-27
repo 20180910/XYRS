@@ -26,7 +26,7 @@
                 app:ptr_ratio_of_header_height_to_refresh="1.2"
                 >
                 <com.library.base.view.MyRecyclerView
-                    android:id="@+id/rv_guanli_chengyuan"
+                    android:id="@+id/rv_shenpi_chengyuan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     >

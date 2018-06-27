@@ -14,26 +14,26 @@ import butterknife.BindView;
  * Created by Administrator on 2018/6/27.
  */
 
-public class GuanLiChengYuanActivity extends BaseActivity {
-    @BindView(R.id.rv_guanli_chengyuan)
-    RecyclerView rv_guanli_chengyuan;
+public class OrderActivity extends BaseActivity {
+    @BindView(R.id.rv_order)
+    RecyclerView rv_order;
     MyAdapter adapter;
     @Override
     protected int getContentView() {
-        setAppTitle("管理成员");
-        return R.layout.guanli_chengyuan_act;
+        setAppRightTitle("排序");
+        return R.layout.order_act;
     }
 
     @Override
     protected void initView() {
-        adapter=new MyAdapter(mContext,R.layout.guanli_chengyuan_item,pageSize) {
+        adapter=new MyAdapter(mContext,R.layout.order_item,pageSize) {
             @Override
             public void bindData(MyRecyclerViewHolder holder, int position, Object bean) {
 
             }
         };
         adapter.setOnLoadMoreListener(this);
-        rv_guanli_chengyuan.setAdapter(adapter);
+        rv_order.setAdapter(adapter);
     }
 
     @Override
