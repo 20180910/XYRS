@@ -113,6 +113,11 @@
         <activity android:name=".module.biyou.activity.ShenPiActivity"/>
         <activity android:name=".module.biyou.activity.OrderActivity"/>
         <activity android:name=".module.my.activity.LiuLanHistoryActivity"/>
+        <activity android:name=".module.biyou.activity.BiYouHuiDetailActivity"/>
+        <activity android:name=".module.biyou.activity.LookChengYuanActivity"/>
+        <activity android:name=".module.biyou.activity.EditBiYouHuiActivity"/>
+        <activity android:name=".module.biyou.activity.BiYouHuiGuanLiActivity"/>
+        <activity android:name=".module.biyou.activity.ShenHeActivity"/>
 
 
     </application>
