@@ -369,6 +369,23 @@
             <com.github.fastshape.MyTextView
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
+                app:left_width="17dp"
+                app:solidColor="@color/white"
+                android:text="我的帖子"
+                android:textSize="16sp"
+                android:textColor="@color/theme_text2"
+                android:drawableLeft="@drawable/wodetiezi"
+                android:drawablePadding="8dp"
+                android:drawableRight="@drawable/jiantou_right2"
+                android:gravity="center_vertical"
+                android:layout_marginTop="2px"
+                android:paddingRight="13dp"
+                android:paddingLeft="12dp"
+                android:layout_marginBottom="2px"
+                />
+            <com.github.fastshape.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
                 app:left_width="14dp"
                 app:solidColor="@color/white"
                 android:text="我的推荐"
@@ -382,22 +399,7 @@
                 android:paddingRight="13dp"
                 android:paddingLeft="13dp"
                 />
-            <com.github.fastshape.MyTextView
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                app:left_width="16dp"
-                app:solidColor="@color/white"
-                android:text="我的收藏"
-                android:textSize="16sp"
-                android:textColor="@color/theme_text2"
-                android:drawableLeft="@drawable/wode_icon_shoucang"
-                android:drawablePadding="10dp"
-                android:drawableRight="@drawable/jiantou_right2"
-                android:gravity="center_vertical"
-                android:layout_marginTop="2px"
-                android:paddingRight="13dp"
-                android:paddingLeft="11dp"
-                />
+
             <com.github.fastshape.MyTextView
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
@@ -413,6 +415,21 @@
                 android:layout_marginTop="2px"
                 android:paddingRight="13dp"
                 android:paddingLeft="13dp"
+                />
+            <com.github.fastshape.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                app:solidColor="@color/white"
+                android:text="我的消息"
+                android:textSize="16sp"
+                android:textColor="@color/theme_text2"
+                android:drawableLeft="@drawable/wodexiaoxi"
+                android:drawablePadding="7dp"
+                android:drawableRight="@drawable/jiantou_right2"
+                android:gravity="center_vertical"
+                android:layout_marginTop="2px"
+                android:paddingRight="13dp"
+                android:paddingLeft="10dp"
                 />
             <com.github.fastshape.MyTextView
                 android:layout_width="match_parent"
@@ -434,6 +451,22 @@
             <com.github.fastshape.MyTextView
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
+                app:left_width="16dp"
+                app:solidColor="@color/white"
+                android:text="我的收藏"
+                android:textSize="16sp"
+                android:textColor="@color/theme_text2"
+                android:drawableLeft="@drawable/wode_icon_shoucang"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/jiantou_right2"
+                android:gravity="center_vertical"
+                android:layout_marginTop="2px"
+                android:paddingRight="13dp"
+                android:paddingLeft="11dp"
+                />
+            <com.github.fastshape.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
                 app:left_width="17dp"
                 app:solidColor="@color/white"
                 android:text="我的浏览记录"
@@ -448,23 +481,7 @@
                 android:paddingLeft="10dp"
                 android:layout_marginBottom="2px"
                 />
-            <com.github.fastshape.MyTextView
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                app:left_width="17dp"
-                app:solidColor="@color/white"
-                android:text="我的帖子"
-                android:textSize="16sp"
-                android:textColor="@color/theme_text2"
-                android:drawableLeft="@drawable/wode_tiezi"
-                android:drawablePadding="10dp"
-                android:drawableRight="@drawable/jiantou_right2"
-                android:gravity="center_vertical"
-                android:layout_marginTop="2px"
-                android:paddingRight="13dp"
-                android:paddingLeft="10dp"
-                android:layout_marginBottom="2px"
-                />
+
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
