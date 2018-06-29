@@ -118,6 +118,7 @@
         <activity android:name=".module.biyou.activity.EditBiYouHuiActivity"/>
         <activity android:name=".module.biyou.activity.BiYouHuiGuanLiActivity"/>
         <activity android:name=".module.biyou.activity.ShenHeActivity"/>
+        <activity android:name=".module.biyou.activity.TaDeZhuYeActivity"/>
 
 
     </application>

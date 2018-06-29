@@ -6,7 +6,7 @@
               android:layout_height="match_parent"
               android:background="@color/bg_color"
     >
-    <include layout="@layout/app_title"/>
+<include layout="@layout/app_title"/>
     <com.library.base.ProgressLayout
         android:id="@id/pl_load"
         android:layout_width="match_parent"
@@ -105,62 +105,7 @@
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
                     android:background="@color/bg_color"
-                    android:paddingLeft="10dp"
-                    android:paddingBottom="10dp"
-                    android:paddingTop="5dp"
                     >
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/icon_rongshuye"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="榕树叶:&#8194;"
-                        android:textColor="@color/theme_text2"
-                        android:layout_marginLeft="5dp"
-                        android:textSize="16sp"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="699"
-                        android:textColor="@color/theme_text1"
-                        android:textSize="16sp"
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:background="@color/bg_color"
-                    >
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:background="@color/bg_color"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        >
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="0"
-                            android:textColor="@color/theme_text1"
-                            />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="卡包"
-                            android:textColor="@color/theme_text2"
-                            android:layout_marginTop="4dp"
-                            />
-                    </LinearLayout>
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -438,7 +383,7 @@
                 <com.github.fastshape.MyTextView
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:text="我的文章"
+                    android:text="TA的文章"
                     android:textSize="16sp"
                     android:textColor="@color/theme_text2"
                     android:drawableLeft="@drawable/wode_icon_wenzhang"
@@ -456,7 +401,7 @@
                     android:layout_height="45dp"
                     app:left_width="17dp"
                     app:solidColor="@color/white"
-                    android:text="我的帖子"
+                    android:text="TA的帖子"
                     android:textSize="16sp"
                     android:textColor="@color/theme_text2"
                     android:drawableLeft="@drawable/wodetiezi"
@@ -473,7 +418,7 @@
                     android:layout_height="45dp"
                     app:left_width="14dp"
                     app:solidColor="@color/white"
-                    android:text="我的推荐"
+                    android:text="TA的推荐"
                     android:textSize="16sp"
                     android:textColor="@color/theme_text2"
                     android:drawableLeft="@drawable/wode_icon_tuijian"
@@ -490,7 +435,7 @@
                     android:layout_height="45dp"
                     app:left_width="14dp"
                     app:solidColor="@color/white"
-                    android:text="我的分享"
+                    android:text="TA的分享"
                     android:textSize="16sp"
                     android:textColor="@color/theme_text2"
                     android:drawableLeft="@drawable/wode_icon_fenxiang"
@@ -498,79 +443,13 @@
                     android:drawableRight="@drawable/jiantou_right2"
                     android:gravity="center_vertical"
                     android:layout_marginTop="2px"
+                    android:layout_marginBottom="2px"
                     android:paddingRight="13dp"
                     android:paddingLeft="13dp"
-                    />
-                <com.github.fastshape.MyTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    app:solidColor="@color/white"
-                    android:text="我的消息"
-                    android:textSize="16sp"
-                    android:textColor="@color/theme_text2"
-                    android:drawableLeft="@drawable/wodexiaoxi"
-                    android:drawablePadding="7dp"
-                    android:drawableRight="@drawable/jiantou_right2"
-                    android:gravity="center_vertical"
-                    android:layout_marginTop="2px"
-                    android:paddingRight="13dp"
-                    android:paddingLeft="10dp"
-                    />
-                <com.github.fastshape.MyTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    app:left_width="17dp"
-                    app:solidColor="@color/white"
-                    android:text="我的卡包"
-                    android:textSize="16sp"
-                    android:textColor="@color/theme_text2"
-                    android:drawableLeft="@drawable/wode_icon_kabao"
-                    android:drawablePadding="10dp"
-                    android:drawableRight="@drawable/jiantou_right2"
-                    android:gravity="center_vertical"
-                    android:layout_marginTop="2px"
-                    android:paddingRight="13dp"
-                    android:paddingLeft="10dp"
-                    android:layout_marginBottom="2px"
-                    />
-                <com.github.fastshape.MyTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    app:left_width="16dp"
-                    app:solidColor="@color/white"
-                    android:text="我的收藏"
-                    android:textSize="16sp"
-                    android:textColor="@color/theme_text2"
-                    android:drawableLeft="@drawable/wode_icon_shoucang"
-                    android:drawablePadding="10dp"
-                    android:drawableRight="@drawable/jiantou_right2"
-                    android:gravity="center_vertical"
-                    android:layout_marginTop="2px"
-                    android:paddingRight="13dp"
-                    android:paddingLeft="11dp"
-                    />
-                <com.github.fastshape.MyTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    app:left_width="17dp"
-                    app:solidColor="@color/white"
-                    android:text="我的浏览记录"
-                    android:textSize="16sp"
-                    android:textColor="@color/theme_text2"
-                    android:drawableLeft="@drawable/wode_liulanjilu"
-                    android:drawablePadding="10dp"
-                    android:drawableRight="@drawable/jiantou_right2"
-                    android:gravity="center_vertical"
-                    android:layout_marginTop="2px"
-                    android:paddingRight="13dp"
-                    android:paddingLeft="10dp"
-                    android:layout_marginBottom="2px"
                     />
 
             </LinearLayout>
 
         </android.support.v4.widget.NestedScrollView>
     </com.library.base.ProgressLayout>
-
-
 </LinearLayout>
