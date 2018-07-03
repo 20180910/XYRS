@@ -119,6 +119,7 @@
         <activity android:name=".module.biyou.activity.BiYouHuiGuanLiActivity"/>
         <activity android:name=".module.biyou.activity.ShenHeActivity"/>
         <activity android:name=".module.biyou.activity.TaDeZhuYeActivity"/>
+        <activity android:name=".module.home.activity.TieZiDetailActivity"/>
 
 
     </application>

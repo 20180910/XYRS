@@ -13,7 +13,7 @@ import com.sk.xyrs.base.BaseFragment;
 public class HomeFragment extends BaseFragment {
     @Override
     protected int getContentView() {
-        return R.layout.my_frag;
+        return R.layout.home_frag;
     }
 
     public static HomeFragment newInstance() {
