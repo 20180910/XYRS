@@ -1,6 +1,7 @@
 package com.sk.xyrs.module.found.fragment;
 
 import android.view.View;
+import android.view.ViewConfiguration;
 
 import com.sk.xyrs.R;
 import com.sk.xyrs.base.BaseFragment;
@@ -17,7 +18,7 @@ public class FoundResultFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-
+        ViewConfiguration.get(getContext()).getScaledTouchSlop();
     }
 
     @Override
