@@ -188,9 +188,9 @@ public abstract class MyBaseActivity extends IBaseActivity implements ProgressLa
 //                rootView.setPadding(0,0,0,navigationBarHeight);
 //            }
         }
-        if(!noSetTheme){
+       /* if(!noSetTheme){
             setTheme(R.style.AppTheme_NoActionBar);
-        }
+        }*/
 
 /*        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();

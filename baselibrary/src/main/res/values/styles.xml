@@ -1,8 +1,9 @@
-<resources>
+<resources><!--
 
-    <!-- Base application theme. -->
+
+    &lt;!&ndash; Base application theme. &ndash;&gt;
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        &lt;!&ndash; Customize your theme here. &ndash;&gt;
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorPrimary</item>
@@ -17,10 +18,10 @@
         <item name="windowNoTitle">true</item>
         <item name="android:textSize">@dimen/app_text_size</item>
         <item name="android:textColor">@color/colorText</item>
-        <!--<item name="android:textCursorDrawable">@drawable/cursor_color</item>&lt;!&ndash;光标颜色&ndash;&gt;-->
+        &lt;!&ndash;<item name="android:textCursorDrawable">@drawable/cursor_color</item>&lt;!&ndash;光标颜色&ndash;&gt;&ndash;&gt;
         <item name="android:editTextStyle">@style/editTextStyle</item>
         <item name="android:textColorHint">@color/app_hint_color</item>
-        <!--<item name="android:listDivider">@drawable/app_list_divider</item>-->
+        &lt;!&ndash;<item name="android:listDivider">@drawable/app_list_divider</item>&ndash;&gt;
     </style>
     <style name="editTextStyle" parent="@style/Base.V7.Widget.AppCompat.EditText">
         <item name="android:editTextColor">@color/colorText</item>
@@ -50,11 +51,12 @@
 
 
     <style name="dialog" parent="@android:style/Theme.Dialog">
-        <item name="android:windowFrame">@null</item><!--边框-->
-        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
-        <item name="android:windowIsTranslucent">true</item><!--半透明-->
-        <item name="android:windowNoTitle">true</item><!--无标题-->
-        <item name="android:windowBackground">@color/transparent</item><!--dialog布局背景透明-->
-        <item name="android:backgroundDimEnabled">true</item><!--背景半透明-->
+        <item name="android:windowFrame">@null</item>&lt;!&ndash;边框&ndash;&gt;
+        <item name="android:windowIsFloating">true</item>&lt;!&ndash;是否浮现在activity之上&ndash;&gt;
+        <item name="android:windowIsTranslucent">true</item>&lt;!&ndash;半透明&ndash;&gt;
+        <item name="android:windowNoTitle">true</item>&lt;!&ndash;无标题&ndash;&gt;
+        <item name="android:windowBackground">@color/transparent</item>&lt;!&ndash;dialog布局背景透明&ndash;&gt;
+        <item name="android:backgroundDimEnabled">true</item>&lt;!&ndash;背景半透明&ndash;&gt;
     </style>
+-->
 </resources>
