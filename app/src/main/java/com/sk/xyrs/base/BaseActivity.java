@@ -57,6 +57,7 @@ public abstract class BaseActivity extends MyBaseActivity {
         super.onCreate(savedInstanceState);
         setAppTitleColor(R.color.theme_text1);
         setAppRightTitleColor(R.color.theme_text2);
+
     }
 
     protected String getUserId() {

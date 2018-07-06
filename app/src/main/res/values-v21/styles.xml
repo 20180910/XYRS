@@ -10,7 +10,7 @@
         <item name="android:textSize">@dimen/app_text_size</item>
         <item name="android:textColorHint">@color/app_hint_color</item>
         <item name="android:textCursorDrawable">@drawable/text_cursor</item>
-        <item name="android:typeface">serif</item>
+        <item name="android:fontFamily">@font/nicai</item>
     </style>
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 

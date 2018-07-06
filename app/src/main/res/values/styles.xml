@@ -22,7 +22,7 @@
         <item name="android:editTextStyle">@style/editTextStyle</item>
         <item name="android:textColorHint">@color/app_hint_color</item>
         <!--<item name="android:listDivider">@drawable/app_list_divider</item>-->
-        <item name="android:typeface">serif</item>
+        <item name="android:fontFamily">@font/nicai</item>
     </style>
     <style name="editTextStyle" parent="@style/Base.V7.Widget.AppCompat.EditText">
         <item name="android:editTextColor">@color/colorText</item>

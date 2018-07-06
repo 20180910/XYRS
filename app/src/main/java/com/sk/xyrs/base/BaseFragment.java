@@ -3,8 +3,10 @@ package com.sk.xyrs.base;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.support.design.widget.BottomSheetDialog;
 import android.util.Log;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -22,6 +24,11 @@ import java.util.Map;
  */
 
 public abstract class BaseFragment extends MyBaseFragment {
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+    }
+
     protected String getUserId() {
         return SPUtils.getString(mContext, Config.user_id, "0");
     }

@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.Target;
 import com.github.rxbus.rxjava.MyFlowableSubscriber;
-import com.github.rxbus.rxjava.MyRx;
+import com.github.rxbus.rxjava.Rx;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -96,7 +96,7 @@ public class FileUtils {
 
 
     public static void downloadImg(final Context context, final String url) {
-        MyRx.start(new MyFlowableSubscriber<Boolean>() {
+        Rx.start(new MyFlowableSubscriber<Boolean>() {
             @Override
             public void subscribe(@io.reactivex.annotations.NonNull FlowableEmitter<Boolean> emitter) {
                 try {

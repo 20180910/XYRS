@@ -6,12 +6,12 @@ import android.content.Context;
 
 import com.github.androidtools.SPUtils;
 import com.github.baseclass.view.Loading;
+import com.github.fastshape.MyTextView;
 import com.github.retrofitutil.NetWorkManager;
 import com.sdklibrary.base.ali.pay.MyAliPay;
 import com.sdklibrary.base.qq.share.MyQQShare;
 import com.sdklibrary.base.wx.pay.MyWXPay;
 import com.sdklibrary.base.wx.share.MyWXShare;
-import com.sk.xyrs.tools.TypefaceUtil;
 
 
 /**
@@ -22,8 +22,8 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        TypefaceUtil.setDefaultTypeface(this,"SERIF", "fonts/nicai.TTF");
-
+//        TypefaceUtil.setDefaultTypeface(this,"SERIF", "fonts/nicai.TTF");
+        MyTextView a=new MyTextView(this);
         //正式
         String baseUrl="http://121.40.186.118:10088/";
 
@@ -34,7 +34,6 @@ public class MyApplication extends Application {
 
         baseUrl="http://121.40.186.118:10089/";
         NetWorkManager.getInstance(getApplicationContext(),baseUrl,BuildConfig.DEBUG).complete();
-
 //        initDownloader();
         Loading.setLoadView(R.layout.app_loading_view);
 

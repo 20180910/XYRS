@@ -450,6 +450,7 @@
                     android:layout_marginTop="5dp"
                     android:paddingRight="13dp"
                     android:paddingLeft="13dp"
+                    android:fontFamily="@font/nicai"
                     />
                 <com.github.fastshape.MyTextView
                     android:layout_width="match_parent"

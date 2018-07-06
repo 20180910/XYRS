@@ -18,7 +18,6 @@ public class BiYouHuiDetailActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
     }
 
     @Override
