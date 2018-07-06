@@ -11,6 +11,7 @@ import com.sdklibrary.base.ali.pay.MyAliPay;
 import com.sdklibrary.base.qq.share.MyQQShare;
 import com.sdklibrary.base.wx.pay.MyWXPay;
 import com.sdklibrary.base.wx.share.MyWXShare;
+import com.sk.xyrs.tools.TypefaceUtil;
 
 
 /**
@@ -21,6 +22,8 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        TypefaceUtil.setDefaultTypeface(this,"SERIF", "fonts/nicai.TTF");
+
         //正式
         String baseUrl="http://121.40.186.118:10088/";
 

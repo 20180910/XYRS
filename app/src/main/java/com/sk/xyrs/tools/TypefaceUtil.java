@@ -11,51 +11,7 @@ import android.widget.TextView;
 
 import java.lang.reflect.Field;
 
-/*
- * Copyright (C) 2013 Peng fei Pan <sky@xiaopan.me>
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 public class TypefaceUtil {
-    /**
-     * 为给定的字符串添加HTML红色标记，当使用Html.fromHtml()方式显示到TextView 的时候其将是红色的
-     *
-     * @param string 给定的字符串
-     * @return
-     */
-    public static String addHtmlRedFlag(String string) {
-        return "<font color=\"red\">" + string + "</font>";
-    }
-
-    /**
-     * 将给定的字符串中所有给定的关键字标红
-     *
-     * @param sourceString 给定的字符串
-     * @param keyword      给定的关键字
-     * @return 返回的是带Html标签的字符串，在使用时要通过Html.fromHtml()转换为Spanned对象再传递给TextView对象
-     */
-    public static String keywordMadeRed(String sourceString, String keyword) {
-        String result = "";
-        if (sourceString != null && !"".equals(sourceString.trim())) {
-            if (keyword != null && !"".equals(keyword.trim())) {
-                result = sourceString.replaceAll(keyword, "<font color=\"red\">" + keyword + "</font>");
-            } else {
-                result = sourceString;
-            }
-        }
-        return result;
-    }
-
     /**
      * <p>Replace the font of specified view and it's children</p>
      * @param root The root view.
@@ -65,8 +21,6 @@ public class TypefaceUtil {
         if (root == null || TextUtils.isEmpty(fontPath)) {
             return;
         }
-
-
         if (root instanceof TextView) { // If view is TextView or it's subclass, replace it's font
             TextView textView = (TextView)root;
             int style = Typeface.NORMAL;
@@ -81,7 +35,6 @@ public class TypefaceUtil {
             }
         }
     }
-
     /**
      * <p>Replace the font of specified view and it's children</p>
      * 通过递归批量替换某个View及其子View的字体改变Activity内部控件的字体(TextView,Button,EditText,CheckBox,RadioButton等)
@@ -91,15 +44,12 @@ public class TypefaceUtil {
     public static void replaceFont(@NonNull Activity context, String fontPath) {
         replaceFont(getRootView(context),fontPath);
     }
-
-
     /*
      * Create a Typeface instance with your font file
      */
     public static Typeface createTypeface(Context context, String fontPath) {
         return Typeface.createFromAsset(context.getAssets(), fontPath);
     }
-
     /**
      * 从Activity 获取 rootView 根节点
      * @param context
@@ -111,28 +61,24 @@ public class TypefaceUtil {
     }
 
     /**
-     * 通过改变App的系统字体替换App内部所有控件的字体(TextView,Button,EditText,CheckBox,RadioButton等)
+     * 设置自定义字体
+     *
      * @param context
-     * @param fontPath
-     * 需要修改style样式为monospace：
+     * @param staticTypefaceFieldName 需要替换的系统字体样式
+     * @param fontAssetName           替换后的字体样式
      */
-//    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-//    <!-- Customize your theme here. -->
-//    <!-- Set system default typeface -->
-//    <item name="android:typeface">monospace</item>
-//    </style>
-    public static void replaceSystemDefaultFont(@NonNull Context context, @NonNull String fontPath) {
-        replaceTypefaceField("MONOSPACE", createTypeface(context, fontPath));
+    public static void setDefaultTypeface(Context context, String staticTypefaceFieldName, String fontAssetName) {
+        // 根据路径得到Typeface
+        Typeface regular = Typeface.createFromAsset(context.getAssets(), fontAssetName);
+        // 设置全局字体样式
+        replaceTypeface(staticTypefaceFieldName, regular);
     }
-
-    /**
-     * <p>Replace field in class Typeface with reflection.</p>
-     */
-    private static void replaceTypefaceField(String fieldName, Object value) {
+    private static void replaceTypeface(String staticTypefaceFieldName, final Typeface newTypeface) {
         try {
-            Field defaultField = Typeface.class.getDeclaredField(fieldName);
-            defaultField.setAccessible(true);
-            defaultField.set(null, value);
+            final Field staticField = Typeface.class.getDeclaredField(staticTypefaceFieldName);
+            staticField.setAccessible(true);
+            //替换系统字体样式
+            staticField.set(null, newTypeface);
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {

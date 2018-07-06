@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorPrimary</item>
         <item name="android:textSize">@dimen/app_text_size</item>
         <item name="android:editTextStyle">@style/editTextStyle</item>
+        <item name="android:typeface">serif</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
@@ -21,6 +22,7 @@
         <item name="android:editTextStyle">@style/editTextStyle</item>
         <item name="android:textColorHint">@color/app_hint_color</item>
         <!--<item name="android:listDivider">@drawable/app_list_divider</item>-->
+        <item name="android:typeface">serif</item>
     </style>
     <style name="editTextStyle" parent="@style/Base.V7.Widget.AppCompat.EditText">
         <item name="android:editTextColor">@color/colorText</item>
