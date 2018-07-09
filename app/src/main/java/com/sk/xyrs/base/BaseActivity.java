@@ -39,10 +39,8 @@ import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Flowable;
 import io.reactivex.FlowableSubscriber;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Function;
-import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by Administrator on 2017/12/18.
@@ -239,8 +237,8 @@ public abstract class BaseActivity extends MyBaseActivity {
                         return count - integer;
                     }
                 })
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new FlowableSubscriber<Long>() {
                     @Override
                     public void onSubscribe(@NonNull Subscription s) {
