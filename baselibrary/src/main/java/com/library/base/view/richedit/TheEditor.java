@@ -37,7 +37,7 @@ import java.util.Locale;
  * limitations under the License.
  */
 
-public class RichEditor extends WebView {
+public class TheEditor extends WebView {
 
   public enum Type {
     BOLD,
@@ -84,16 +84,16 @@ public class RichEditor extends WebView {
   private OnDecorationStateListener mDecorationStateListener;
   private AfterInitialLoadListener mLoadListener;
 
-  public RichEditor(Context context) {
+  public TheEditor(Context context) {
     this(context, null);
   }
 
-  public RichEditor(Context context, AttributeSet attrs) {
+  public TheEditor(Context context, AttributeSet attrs) {
     this(context, attrs, android.R.attr.webViewStyle);
   }
 
   @SuppressLint("SetJavaScriptEnabled")
-  public RichEditor(Context context, AttributeSet attrs, int defStyleAttr) {
+  public TheEditor(Context context, AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
 
     setVerticalScrollBarEnabled(false);
