@@ -3,7 +3,6 @@ package com.sk.xyrs.module.home.activity;
 import android.content.DialogInterface;
 import android.support.annotation.NonNull;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -22,10 +21,11 @@ import com.sk.xyrs.R;
 import com.sk.xyrs.base.BaseActivity;
 import com.sk.xyrs.base.MyCallBack;
 import com.sk.xyrs.event.LoginSuccessEvent;
+import com.sk.xyrs.module.home.fragment.BiYouFragment;
 import com.sk.xyrs.module.home.fragment.FoundFragment;
 import com.sk.xyrs.module.home.fragment.HomeFragment;
 import com.sk.xyrs.module.home.fragment.MyFragment;
-import com.sk.xyrs.module.my.activity.LoginActivity;
+import com.sk.xyrs.module.home.fragment.TouGaoFragment;
 import com.sk.xyrs.network.NetApiRequest;
 import com.sk.xyrs.network.response.ImageObj;
 
@@ -44,6 +44,9 @@ public class MainActivity extends BaseActivity {
 
     HomeFragment homeFragment;
     FoundFragment foundFragment;
+    TouGaoFragment touGaoFragment;
+    BiYouFragment biYouFragment;
+
     MyFragment myFragment;
 
     @BindView(R.id.fl_content)
@@ -53,6 +56,9 @@ public class MainActivity extends BaseActivity {
 
     @BindView(R.id.rb_home_tab2)
     MyRadioButton rb_home_tab2;
+
+    @BindView(R.id.rb_home_tab4)
+    MyRadioButton rb_home_tab4;
 
     @BindView(R.id.rb_home_tab5)
     MyRadioButton rb_home_tab5;
@@ -74,9 +80,9 @@ public class MainActivity extends BaseActivity {
         getYouXueImg();
         getLiuXueImg();
 
-        if(SPUtils.getBoolean(mContext, AppXml.updatePWD,false)){
+        if (SPUtils.getBoolean(mContext, AppXml.updatePWD, false)) {
             clearUserId();
-            SPUtils.setPrefBoolean(mContext, AppXml.updatePWD,false);
+            SPUtils.setPrefBoolean(mContext, AppXml.updatePWD, false);
         }
 
         homeFragment = new HomeFragment();
@@ -89,26 +95,26 @@ public class MainActivity extends BaseActivity {
     }
 
 
-
     private void getYouXueImg() {
-        Map<String,String>map=new HashMap<String,String>();
-        map.put("type","1");
-        map.put("sign",getSign(map));
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("type", "1");
+        map.put("sign", getSign(map));
         NetApiRequest.getYouXueObj(map, new MyCallBack<ImageObj>(mContext) {
             @Override
             public void onSuccess(ImageObj obj, int errorCode, String msg) {
-                SPUtils.setPrefString(mContext,AppXml.youXueImg,obj.getImg_url());
+                SPUtils.setPrefString(mContext, AppXml.youXueImg, obj.getImg_url());
             }
         });
     }
+
     private void getLiuXueImg() {
-        Map<String,String>map=new HashMap<String,String>();
-        map.put("type","2");
-        map.put("sign",getSign(map));
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("type", "2");
+        map.put("sign", getSign(map));
         NetApiRequest.getYouXueObj(map, new MyCallBack<ImageObj>(mContext) {
             @Override
             public void onSuccess(ImageObj obj, int errorCode, String msg) {
-                SPUtils.setPrefString(mContext,AppXml.liuXueImg,obj.getImg_url());
+                SPUtils.setPrefString(mContext, AppXml.liuXueImg, obj.getImg_url());
             }
         });
     }
@@ -117,10 +123,11 @@ public class MainActivity extends BaseActivity {
         selectView = rb_home_tab1;
         rb_home_tab1.setOnClickListener(getTabClickListener(1));
         rb_home_tab2.setOnClickListener(getTabClickListener(2));
-        rb_home_tab5.setOnClickListener(getTabClickListener(3));
+        rb_home_tab3.setOnClickListener(getTabClickListener(3));
+        rb_home_tab4.setOnClickListener(getTabClickListener(4));
+        rb_home_tab5.setOnClickListener(getTabClickListener(5));
 
     }
-
 
 
     @NonNull
@@ -133,34 +140,52 @@ public class MainActivity extends BaseActivity {
                         selectHome();
                         break;
                     case 2:
-                        if (TextUtils.equals(noLoginCode, getUserId())) {
-                            STActivity(LoginActivity.class);
-                            selectView.setChecked(true);
-                        } else {
-                            selectOrder();
-                        }
+//                        if (TextUtils.equals(noLoginCode, getUserId())) {
+//                            STActivity(LoginActivity.class);
+//                            selectView.setChecked(true);
+//                        } else {
+                            selectFound();
+//                        }
                         break;
                     case 3:
                        /* if (TextUtils.equals(noLoginCode, getUserId())) {
                             STActivity(LoginActivity.class);
                             selectView.setChecked(true);
                         } else {*/
-                            selectMy();
+                        selectTouGao();
+//                        }
+                        break;
+                    case 4:
+                       /* if (TextUtils.equals(noLoginCode, getUserId())) {
+                            STActivity(LoginActivity.class);
+                            selectView.setChecked(true);
+                        } else {*/
+                        selectBiYouHui();
+//                        }
+                        break;
+                    case 5:
+                       /* if (TextUtils.equals(noLoginCode, getUserId())) {
+                            STActivity(LoginActivity.class);
+                            selectView.setChecked(true);
+                        } else {*/
+                        selectMy();
 //                        }
                         break;
                 }
             }
         };
     }
+
+
     @Override
     protected void initRxBus() {
         super.initRxBus();
         getEvent(LoginSuccessEvent.class, new MyConsumer<LoginSuccessEvent>() {
             @Override
             public void onAccept(LoginSuccessEvent event) {
-                if(event.status==LoginSuccessEvent.status_1){
+                if (event.status == LoginSuccessEvent.status_1) {
                     selectMy();
-                }else if(event.status==LoginSuccessEvent.status_0){
+                } else if (event.status == LoginSuccessEvent.status_0) {
                     selectHome();
                 }
                 selectView.setChecked(true);
@@ -181,11 +206,14 @@ public class MainActivity extends BaseActivity {
         } else {
             showFragment(homeFragment);
         }
+//        hideFragment(homeFragment);
         hideFragment(foundFragment);
+        hideFragment(touGaoFragment);
+        hideFragment(biYouFragment);
         hideFragment(myFragment);
     }
 
-    private void selectOrder() {
+    private void selectFound() {
         if (selectView == rb_home_tab2) {
             return;
         }
@@ -197,8 +225,47 @@ public class MainActivity extends BaseActivity {
             showFragment(foundFragment);
         }
         hideFragment(homeFragment);
+//        hideFragment(foundFragment);
+        hideFragment(touGaoFragment);
+        hideFragment(biYouFragment);
         hideFragment(myFragment);
     }
+
+
+    private void selectTouGao() {
+        selectView.setChecked(false);
+        selectView=null;
+        if (touGaoFragment == null) {
+            touGaoFragment = new TouGaoFragment();
+            addFragment(R.id.fl_content, touGaoFragment);
+        } else {
+            showFragment(touGaoFragment);
+        }
+        hideFragment(homeFragment);
+        hideFragment(foundFragment);
+//        hideFragment(touGaoFragment);
+        hideFragment(biYouFragment);
+        hideFragment(myFragment);
+    }
+
+    private void selectBiYouHui() {
+        if (selectView == rb_home_tab4) {
+            return;
+        }
+        selectView = rb_home_tab4;
+        if (biYouFragment == null) {
+            biYouFragment = new BiYouFragment();
+            addFragment(R.id.fl_content, biYouFragment);
+        } else {
+            showFragment(biYouFragment);
+        }
+        hideFragment(homeFragment);
+        hideFragment(foundFragment);
+        hideFragment(touGaoFragment);
+//        hideFragment(biYouFragment);
+        hideFragment(myFragment);
+    }
+
 
     private void selectMy() {
         if (selectView == rb_home_tab5) {
@@ -213,6 +280,9 @@ public class MainActivity extends BaseActivity {
         }
         hideFragment(homeFragment);
         hideFragment(foundFragment);
+        hideFragment(touGaoFragment);
+        hideFragment(biYouFragment);
+//        hideFragment(myFragment);
     }
 
     @Override
@@ -223,16 +293,16 @@ public class MainActivity extends BaseActivity {
     }
 
     private void updateApp() {
-        Map<String,String>map=new HashMap<String,String>();
-        map.put("rnd",getRnd());
-        map.put("sign",GetSign.getSign(map));
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("rnd", getRnd());
+        map.put("sign", GetSign.getSign(map));
         NetApiRequest.getAppVersion(map, new MyCallBack<AppVersionObj>(mContext) {
             @Override
             public void onSuccess(final AppVersionObj obj, int errorCode, String msg) {
-                if(obj.getAndroid_version()>getAppVersionCode()){
-                    SPUtils.setPrefString(mContext,Config.appDownloadUrl,obj.getAndroid_vs_url());
-                    SPUtils.setPrefBoolean(mContext,Config.appHasNewVersion,true);
-                    MyDialog.Builder mDialog=new MyDialog.Builder(mContext);
+                if (obj.getAndroid_version() > getAppVersionCode()) {
+                    SPUtils.setPrefString(mContext, Config.appDownloadUrl, obj.getAndroid_vs_url());
+                    SPUtils.setPrefBoolean(mContext, Config.appHasNewVersion, true);
+                    MyDialog.Builder mDialog = new MyDialog.Builder(mContext);
                     mDialog.setMessage("检测到app有新版本是否更新?");
                     mDialog.setNegativeButton(new DialogInterface.OnClickListener() {
                         @Override
@@ -249,8 +319,8 @@ public class MainActivity extends BaseActivity {
                         }
                     });
                     mDialog.create().show();
-                }else{
-                    SPUtils.setPrefBoolean(mContext,Config.appHasNewVersion,false);
+                } else {
+                    SPUtils.setPrefBoolean(mContext, Config.appHasNewVersion, false);
                 }
             }
         });
@@ -292,18 +362,15 @@ public class MainActivity extends BaseActivity {
         NetApiRequest.getPayNotifyUrl(map, new MyCallBack<PayObj>(mContext) {
             @Override
             public void onSuccess(PayObj obj, int errorCode, String msg) {
-                if(obj.getPayment_type()==1){
-                    SPUtils.setPrefString(mContext,Config.payType_ZFB,obj.getPayment_url());
-                }else{
-                    SPUtils.setPrefString(mContext,Config.payType_WX,obj.getPayment_url());
+                if (obj.getPayment_type() == 1) {
+                    SPUtils.setPrefString(mContext, Config.payType_ZFB, obj.getPayment_url());
+                } else {
+                    SPUtils.setPrefString(mContext, Config.payType_WX, obj.getPayment_url());
                 }
             }
         });
 
     }
-
-
-
 
 
     protected void onViewClick(View v) {

@@ -2,6 +2,7 @@ package com.sk.xyrs.module.home.fragment;
 
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.res.ResourcesCompat;
 import android.view.View;
 import android.widget.TextView;
 
@@ -38,6 +39,7 @@ public class MyFragment extends BaseFragment {
     @Override
     protected void initView() {
         app_title.setText("我的");
+        app_title.setTypeface(ResourcesCompat.getFont(mContext,R.font.pingfang_bold));
         app_title.setTextColor(ContextCompat.getColor(mContext,R.color.theme_text1));
 
         app_right_tv.setText("设置");

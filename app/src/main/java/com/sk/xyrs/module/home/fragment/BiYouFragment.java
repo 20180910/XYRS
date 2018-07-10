@@ -1,8 +1,11 @@
 package com.sk.xyrs.module.home.fragment;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.TextView;
@@ -47,9 +50,11 @@ public class BiYouFragment extends BaseFragment {
         return fragment;
     }
 
+    @TargetApi(Build.VERSION_CODES.O)
     @Override
     protected void initView() {
         app_title.setText("笔友会");
+        app_title.setTypeface(ResourcesCompat.getFont(mContext,R.font.pingfang_bold));
         app_right_tv.setText("创建/加入");
         app_title.setTextColor(ContextCompat.getColor(mContext,R.color.theme_text1));
         app_right_tv.setTextColor(ContextCompat.getColor(mContext,R.color.theme_text2));
