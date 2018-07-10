@@ -26,6 +26,7 @@ import com.sk.xyrs.module.home.fragment.FoundFragment;
 import com.sk.xyrs.module.home.fragment.HomeFragment;
 import com.sk.xyrs.module.home.fragment.MyFragment;
 import com.sk.xyrs.module.home.fragment.TouGaoFragment;
+import com.sk.xyrs.module.my.activity.LoginActivity;
 import com.sk.xyrs.network.NetApiRequest;
 import com.sk.xyrs.network.response.ImageObj;
 
@@ -148,6 +149,8 @@ public class MainActivity extends BaseActivity {
 //                        }
                         break;
                     case 3:
+                        STActivity(LoginActivity.class);
+                        selectView.setChecked(true);
                        /* if (TextUtils.equals(noLoginCode, getUserId())) {
                             STActivity(LoginActivity.class);
                             selectView.setChecked(true);

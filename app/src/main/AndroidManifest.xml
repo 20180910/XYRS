@@ -70,7 +70,7 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="orientation|keyboardHidden">
         </activity>
-        <activity android:name=".module.my.activity.LoginActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".module.my.activity.LoginActivity" android:windowSoftInputMode="adjustNothing"/>
         <activity android:name=".module.my.activity.UnBindPhoneActivity"/>
         <activity android:name=".module.my.activity.FindPWDActivity"/>
         <activity android:name=".module.my.activity.InputPhoneActivity"/>

@@ -67,7 +67,7 @@
 
                 <com.github.fastshape.MyLinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="43dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:layout_margin="30dp"
@@ -76,7 +76,7 @@
                     app:all_line="true"
                     app:radius="3dp"
                     android:paddingRight="10dp"
-                    app:borderWidth="1px"
+                    app:borderWidth="2px"
                     >
                     <com.github.fastshape.MyTextView
                         android:layout_width="60dp"
@@ -84,20 +84,21 @@
                         android:text="+86"
                         android:gravity="center"
                         android:textColor="@color/theme_text2"
-                        android:textSize="15sp"
+                        android:textSize="14sp"
                         />
                     <View
-                        android:layout_width="1px"
+                        android:layout_width="2px"
                         android:layout_height="match_parent"
                         android:background="@color/my_login_border"
                         />
                     <com.sk.xyrs.view.MyEditText
+                        android:id="@+id/et_login_phone"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:imeOptions="actionNext"
                         android:inputType="number"
-                        android:textSize="15sp"
+                        android:textSize="14sp"
                         android:textColor="@color/theme_text2"
                         android:textColorHint="@color/hint_text"
                         android:hint="请输入手机号"
@@ -106,7 +107,7 @@
                 </com.github.fastshape.MyLinearLayout>
                 <com.github.fastshape.MyLinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="43dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:layout_marginLeft="30dp"
@@ -115,89 +116,126 @@
                     app:borderColor="@color/my_login_border"
                     app:all_line="true"
                     app:radius="3dp"
-                    app:borderWidth="1px"
+                    app:borderWidth="2px"
                     >
                     <com.sk.xyrs.view.MyEditText
+                        android:id="@+id/et_login_code"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:imeOptions="actionNext"
                         android:inputType="number"
-                        android:textSize="15sp"
+                        android:textSize="14sp"
                         android:textColor="@color/theme_text2"
                         android:textColorHint="@color/hint_text"
                         android:hint="请输入短信验证码"
                         />
+
                     <View
-                        android:layout_width="1px"
+                        android:layout_width="2px"
                         android:layout_height="match_parent"
                         android:background="@color/my_login_border"
                         />
+
                     <com.github.fastshape.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="获取验证码"
                         android:gravity="center"
                         android:textColor="@color/theme_text2"
-                        android:textSize="15sp"
+                        android:textSize="14sp"
                         android:ems="5"
                         />
                 </com.github.fastshape.MyLinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="其他登录方式"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="30dp"
-                    android:textColor="@color/theme_text3"
-                    />
-                <LinearLayout
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    >
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent"
-                        />
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/qq"
-                    />
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent"
-                        />
-                    <ImageView
-                        android:layout_width="wrap_content"
+                    android:layout_height="140dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/wechat"
-                        />
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent"
-                        />
-                    <ImageView
-                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical"
+                        android:visibility="gone"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="其他登录方式"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="30dp"
+                            android:textColor="@color/theme_text3"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            >
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/qq"
+                                />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/wechat"
+                                />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/weibo"
+                                />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/weibo"
-                        />
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent"
-                        />
-                </LinearLayout>
+                        android:orientation="vertical"
+                        android:gravity="center_vertical"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="收不到短信?获取语音验证码"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="30dp"
+                            android:textColor="@color/theme_text2"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="继续表示您同意《相约榕树协议》"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/theme_text2"
+                            />
+                    </LinearLayout>
+                </FrameLayout>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
