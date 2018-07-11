@@ -14,7 +14,6 @@ import com.github.rxbus.RxBus;
 import com.library.base.BaseObj;
 import com.library.base.tools.ZhengZeUtils;
 import com.sk.xyrs.AppXml;
-import com.sk.xyrs.Constant;
 import com.sk.xyrs.IntentParam;
 import com.sk.xyrs.R;
 import com.sk.xyrs.base.BaseActivity;
@@ -122,7 +121,7 @@ public class LoginActivity extends BaseActivity {
         Map<String,String>map=new HashMap<String,String>();
         map.put("mobile",et_login_phone.getText().toString());
         map.put("code",et_login_code.getText().toString());
-        map.put("registrationid", SPUtils.getString(mContext, Constant.registrationId,"0"));
+        map.put("registrationid", SPUtils.getString(mContext, AppXml.registrationId,"0"));
         map.put("sign",getSign(map));
         ApiRequest.loginForMsg(map, new MyCallBack<LoginObj>(mContext) {
             @Override
@@ -187,10 +186,10 @@ public class LoginActivity extends BaseActivity {
                     showMsg("请输入正确手机号");
                     return;
                 }
-                getMsgCode(getSStr(et_login_code));
+                getMsgCode(getSStr(et_login_phone));
                 break;
             case R.id.tv_pwd_login:
-
+                STActivityForResult(LoginForPWDActivity.class,100);
                 break;
             case R.id.iv_pwd_login_close:
                 finish();
@@ -208,6 +207,18 @@ public class LoginActivity extends BaseActivity {
             case R.id.tv_login_question:
                 STActivity(LoginQuestionActivity.class);
                 break;
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode==RESULT_OK){
+            switch (requestCode){
+                case 100:
+                    finish();
+                break;
+            }
         }
     }
 

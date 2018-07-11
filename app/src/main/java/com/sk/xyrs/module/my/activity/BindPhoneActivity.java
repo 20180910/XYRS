@@ -12,7 +12,7 @@ import com.sk.xyrs.base.BaseActivity;
 public class BindPhoneActivity extends BaseActivity {
     @Override
     protected int getContentView() {
-        return R.layout.find_pwd_act;
+        return R.layout.bind_phone_act;
     }
 
     @Override
@@ -25,8 +25,7 @@ public class BindPhoneActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void onViewClick(View v) {
+    public void onViewClick(View view) {
 
     }
 }

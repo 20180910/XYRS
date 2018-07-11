@@ -86,7 +86,7 @@ public abstract class MyBaseActivity extends IBaseActivity implements ProgressLa
     protected TextView app_title, app_right_tv;
     protected ImageView app_right_iv;
     private View status_bar, v_bottom_line;
-    private boolean hiddenBottomLine;
+    private boolean hiddenBottomLine=false;
     protected PtrClassicFrameLayout pcfl;
     protected boolean noSetTheme;
     protected ProgressLayout pl_load;
@@ -122,6 +122,23 @@ public abstract class MyBaseActivity extends IBaseActivity implements ProgressLa
                 app_title.setText(appTitle == null ? "" : appTitle);
             }
         }
+    }
+    protected void setAppShortTitle(String title,int count) {
+        if(!TextUtils.isEmpty(title)&&title.length()>count){
+            appTitle=title.substring(0,count)+"...";
+        }else{
+            appTitle=title;
+        }
+        if (app_title != null) {
+            if(BuildConfig.DEBUG){
+                app_title.setText(appTitle == null ? "" : appTitle+"(DeBug)");
+            }else{
+                app_title.setText(appTitle == null ? "" : appTitle);
+            }
+        }
+    }
+    protected void setAppShortTitle(String title) {
+        setAppShortTitle(title,9);
     }
 
     public void setAppRightTitle(String appRightTitle) {

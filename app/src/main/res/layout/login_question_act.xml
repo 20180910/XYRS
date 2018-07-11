@@ -25,7 +25,7 @@
                 android:paddingLeft="10dp"
                 android:text="常见问题"
                 android:textColor="@color/theme_text1"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:gravity="center_vertical"
                 />
             <View
@@ -33,12 +33,21 @@
                 android:layout_height="2px"
                 android:background="@color/background_f2"
                 />
-            <com.library.base.view.MyRecyclerView
-                android:id="@+id/rv_question"
+            <in.srain.cube.views.ptr.PtrClassicFrameLayout
+                android:id="@id/pcfl_refresh"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                app:ptr_resistance="2.1"
+                app:ptr_ratio_of_header_height_to_refresh="1.2"
                 >
-            </com.library.base.view.MyRecyclerView>
+                <com.library.base.view.MyRecyclerView
+                    android:id="@+id/rv_question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                </com.library.base.view.MyRecyclerView>
+            </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+
         </LinearLayout>
         <TextView
             android:id="@+id/tv_question"

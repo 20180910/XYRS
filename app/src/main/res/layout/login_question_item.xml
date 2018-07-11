@@ -7,6 +7,7 @@
               android:background="@color/white"
     >
 <TextView
+    android:id="@+id/tv_login_question"
     android:layout_width="match_parent"
     android:layout_height="45dp"
     android:text="为什么无法登陆?"

@@ -8,7 +8,6 @@ public class Constant {
 
     public static final String title="title";
     public static final String url="url";
-    public static final String registrationId="registrationId";
     public static final String xianShiStatus="xianShiStatus";
     public static final String timeStatus="timeStatus";
     public static final int today=1;

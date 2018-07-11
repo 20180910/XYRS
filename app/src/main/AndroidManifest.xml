@@ -120,6 +120,7 @@
         <activity android:name=".module.biyou.activity.ShenHeActivity"/>
         <activity android:name=".module.biyou.activity.TaDeZhuYeActivity"/>
         <activity android:name=".module.home.activity.TieZiDetailActivity"/>
+        <activity android:name=".module.my.activity.LoginForPWDActivity"/>
 
 
     </application>

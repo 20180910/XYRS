@@ -33,6 +33,7 @@ public class AppXml {
     public static final String create_xing_num = "create_xing_num";
     public static final String read_value = "read_value";
     public static final String read_name = "read_name";
+    public static final String registrationId="registrationId";
     public static final String read_fenshu = "read_fenshu";
     public static final String read_xing_num = "read_xing_num";
     public static final String is_show_biaoqian = "is_show_biaoqian";

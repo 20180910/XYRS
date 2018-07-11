@@ -150,7 +150,6 @@ public class MainActivity extends BaseActivity {
                         break;
                     case 3:
                         STActivity(LoginActivity.class);
-                        selectView.setChecked(true);
                        /* if (TextUtils.equals(noLoginCode, getUserId())) {
                             STActivity(LoginActivity.class);
                             selectView.setChecked(true);
@@ -236,8 +235,10 @@ public class MainActivity extends BaseActivity {
 
 
     private void selectTouGao() {
-        selectView.setChecked(false);
-        selectView=null;
+        if(selectView!=null){
+            selectView.setChecked(false);
+            selectView=null;
+        }
         if (touGaoFragment == null) {
             touGaoFragment = new TouGaoFragment();
             addFragment(R.id.fl_content, touGaoFragment);

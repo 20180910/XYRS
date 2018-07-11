@@ -45,7 +45,7 @@
                     app:all_line="true"
                     app:radius="3dp"
                     android:paddingRight="10dp"
-                    app:borderWidth="1px"
+                    app:borderWidth="2px"
                     >
                     <com.github.fastshape.MyTextView
                         android:layout_width="60dp"
@@ -56,17 +56,18 @@
                         android:textSize="15sp"
                         />
                     <View
-                        android:layout_width="1px"
+                        android:layout_width="2px"
                         android:layout_height="match_parent"
                         android:background="@color/my_login_border"
                         />
                     <com.sk.xyrs.view.MyEditText
+                        android:id="@+id/et_pwdlogin_phone"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:imeOptions="actionNext"
                         android:inputType="number"
-                        android:textSize="15sp"
+                        android:textSize="14sp"
                         android:textColor="@color/theme_text2"
                         android:textColorHint="@color/hint_text"
                         android:hint="请输入手机号"
@@ -84,22 +85,25 @@
                     app:borderColor="@color/my_login_border"
                     app:all_line="true"
                     app:radius="3dp"
-                    app:borderWidth="1px"
+                    app:borderWidth="2px"
                     >
                     <com.sk.xyrs.view.MyEditText
+                        android:id="@+id/et_pwdlogin_pwd"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:imeOptions="actionNext"
                         android:inputType="textWebPassword"
-                        android:textSize="15sp"
+                        android:textSize="14sp"
                         android:textColor="@color/theme_text2"
                         android:textColorHint="@color/hint_text"
                         android:hint="请输入账号密码"
+                        android:maxLines="8"
                         />
                 </com.github.fastshape.MyLinearLayout>
                 <TextView
+                    android:id="@+id/tv_pwdlogin_forget"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="忘记密码?"
@@ -114,15 +118,30 @@
                     android:gravity="center_horizontal"
                     android:layout_marginTop="30dp"
                     >
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="继续表示您同意《相约榕树协议》"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal"
                         android:layout_gravity="center_horizontal"
-                        android:textColor="@color/theme_text2"
-                        />
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="继续表示您同意"
+                            android:textColor="@color/theme_text2"
+                            />
+                        <TextView
+                            android:id="@+id/tv_pwdlogin_xieyi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="《相约榕树协议》"
+                            android:textColor="@color/theme_text1"
+                            />
+                    </LinearLayout>
                 </LinearLayout>
                 <ImageView
+                    android:id="@+id/tv_pwdlogin_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/queding"
@@ -130,6 +149,7 @@
                     android:layout_marginTop="10dp"
                     />
                 <TextView
+                    android:id="@+id/tv_pwdlogin_question"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="登录遇到问题?"

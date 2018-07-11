@@ -23,7 +23,7 @@
         <item name="editTextStyle">@style/editTextStyle</item>
         <item name="android:textColorHint">@color/app_hint_color</item>
         <!--<item name="android:listDivider">@drawable/app_list_divider</item>-->
-        <item name="android:fontFamily">@font/pingfang_regular</item>
+        <!--<item name="android:fontFamily">@font/pingfang_regular</item>-->
     </style>
     <style name="editTextStyle" parent="@style/Base.V7.Widget.AppCompat.EditText">
         <item name="android:textCursorDrawable">@drawable/text_cursor</item>

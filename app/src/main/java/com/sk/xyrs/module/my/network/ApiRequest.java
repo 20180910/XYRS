@@ -17,6 +17,10 @@ public class ApiRequest extends BaseApiRequest {
         if (notNetWork(callBack.getContext())) { callBack.onFailure(null, new NoNetworkException(Config.noNetWork)); return;  }
         getGeneralClient(IRequest.class).loginForMsg(map).enqueue(callBack);
     }
+    public static void loginForPwd(Map map, MyCallBack callBack) {
+        if (notNetWork(callBack.getContext())) { callBack.onFailure(null, new NoNetworkException(Config.noNetWork)); return;  }
+        getGeneralClient(IRequest.class).loginForPwd(map).enqueue(callBack);
+    }
     public static void getUserInfo(Map map, MyCallBack callBack) {
         if (notNetWork(callBack.getContext())) { callBack.onFailure(null, new NoNetworkException(Config.noNetWork)); return;  }
         getGeneralClient(IRequest.class).getUserInfo(map).enqueue(callBack);
@@ -29,6 +33,10 @@ public class ApiRequest extends BaseApiRequest {
     public static void getLoginProblems(Map map, MyCallBack callBack) {
         if (notNetWork(callBack.getContext())) { callBack.onFailure(null, new NoNetworkException(Config.noNetWork)); return;  }
         getGeneralClient(IRequest.class).getLoginProblems(map).enqueue(callBack);
+    }
+    public static void findPWD(Map map, MyCallBack callBack) {
+        if (notNetWork(callBack.getContext())) { callBack.onFailure(null, new NoNetworkException(Config.noNetWork)); return;  }
+        getGeneralClient(IRequest.class).findPWD(map).enqueue(callBack);
     }
 
 }

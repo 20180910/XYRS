@@ -3,7 +3,9 @@ package com.sk.xyrs.module.my.network;
 import com.library.base.BaseObj;
 import com.library.base.ResponseObj;
 import com.sk.xyrs.module.my.network.response.LoginObj;
+import com.sk.xyrs.module.my.network.response.LoginQuestionObj;
 
+import java.util.List;
 import java.util.Map;
 
 import retrofit2.Call;
@@ -18,6 +20,9 @@ public interface IRequest {
     //短信登录
     @GET("api/User/GetUserRegisterforMobileCode")
     Call<ResponseObj<LoginObj>> loginForMsg(@QueryMap Map<String, String> map);
+    //密码登录
+    @GET("api/User/GetUserRegisterforMobilePwd")
+    Call<ResponseObj<LoginObj>> loginForPwd(@QueryMap Map<String, String> map);
     //获取用户资料
     @GET("api/User/GetUserInfo")
     Call<ResponseObj<LoginObj>> getUserInfo(@QueryMap Map<String, String> map);
@@ -28,6 +33,10 @@ public interface IRequest {
 
     //获取登录遇到的问题
     @GET("api/Lib/GetLoginProblems")
-    Call<ResponseObj<BaseObj>> getLoginProblems(@QueryMap Map<String, String> map);
+    Call<ResponseObj<List<LoginQuestionObj>>> getLoginProblems(@QueryMap Map<String, String> map);
+
+    //找回密码
+    @GET("api/User/GetResetPassword")
+    Call<ResponseObj<BaseObj>> findPWD(@QueryMap Map<String, String> map);
 
 }

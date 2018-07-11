@@ -35,12 +35,14 @@ import org.reactivestreams.Subscription;
 
 import java.io.File;
 import java.util.Map;
+import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Flowable;
 import io.reactivex.FlowableSubscriber;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by Administrator on 2017/12/18.
@@ -98,6 +100,8 @@ public abstract class BaseActivity extends MyBaseActivity {
             isShareImg = true;
         }*/
     }
+
+
 
     @Override
     protected void setClickListener() {
@@ -237,8 +241,14 @@ public abstract class BaseActivity extends MyBaseActivity {
                         return count - integer;
                     }
                 })
-//                .subscribeOn(Schedulers.io())
+                .subscribeOn(Schedulers.io())
 //                .observeOn(AndroidSchedulers.mainThread())
+                .observeOn(Schedulers.from(new Executor(){
+                    @Override
+                    public void execute(@android.support.annotation.NonNull Runnable command) {
+                        runOnUiThread(command);
+                    }
+                }))
                 .subscribe(new FlowableSubscriber<Long>() {
                     @Override
                     public void onSubscribe(@NonNull Subscription s) {

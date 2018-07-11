@@ -6,8 +6,8 @@ package com.sk.xyrs;
 
 public class IntentParam {
     public static final String xieYiType = "xieYiType";
-    public static final String selectShenQing = "selectShenQing";
-    public static final String ziXunId = "ziXunId";
+    public static final String id = "id";
+    public static final String content = "content";
     public static final String guoJia = "guoJia";
     public static final String detailInto = "detailInto";
     public static final String flag = "flag";
