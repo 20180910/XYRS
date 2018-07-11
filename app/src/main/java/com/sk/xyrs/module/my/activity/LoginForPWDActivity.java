@@ -101,6 +101,7 @@ public class LoginForPWDActivity extends BaseActivity {
             }
             private void setUserData(LoginObj obj) {
 
+
                 SPUtils.setPrefString(mContext, AppXml.userId,obj.getUser_id());
                 SPUtils.setPrefString(mContext, AppXml.mobile,obj.getMobile());
                 SPUtils.setPrefString(mContext, AppXml.bi_name,obj.getBi_name());

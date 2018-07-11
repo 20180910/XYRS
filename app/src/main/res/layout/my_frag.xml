@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
@@ -38,9 +39,10 @@
                         android:gravity="center_vertical"
                         >
                         <com.github.fastshape.MyTextView
+                            android:id="@+id/tv_my_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="李东"
+                            tools:text="李东"
                             android:textColor="@color/theme_text1"
                             android:textSize="19sp"
                             />
@@ -50,6 +52,7 @@
                             android:layout_height="2px"
                             />
                         <com.github.fastshape.MyTextView
+                            android:id="@+id/tv_my_recharge"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="充值"
@@ -64,6 +67,7 @@
                             android:layout_marginRight="10dp"
                             />
                         <com.github.fastshape.MyTextView
+                            android:id="@+id/tv_my_edit"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="编辑资料"
@@ -78,9 +82,10 @@
                             />
                     </LinearLayout>
                     <TextView
+                        android:id="@+id/tv_my_sign"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="生活不止诗和远方~"
+                        tools:text="生活不止诗和远方~"
                         android:layout_marginTop="8dp"
                         android:textColor="@color/theme_text1"
                         />
@@ -111,9 +116,10 @@
                         android:textSize="16sp"
                         />
                     <TextView
+                        android:id="@+id/tv_my_shuye_num"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="699"
+                        tools:text="699"
                         android:textColor="@color/theme_text1"
                         android:textSize="16sp"
                         />
@@ -135,9 +141,10 @@
                         android:padding="10dp"
                         >
                         <TextView
+                            android:id="@+id/tv_my_kabao"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
+                            tools:text="0"
                             android:textColor="@color/theme_text1"
                             />
                         <TextView
@@ -158,9 +165,10 @@
                         android:padding="10dp"
                         >
                         <TextView
+                            android:id="@+id/tv_my_guanzhu"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
+                            tools:text="0"
                             android:textColor="@color/theme_text1"
                             />
                         <TextView
@@ -181,9 +189,10 @@
                         android:padding="10dp"
                         >
                         <TextView
+                            android:id="@+id/tv_my_fensi"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
+                            tools:text="0"
                             android:textColor="@color/theme_text1"
                             />
                         <TextView
@@ -210,18 +219,20 @@
                         android:gravity="center"
                         android:padding="10dp"
                         >
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="我的"
+                            android:text="加入"
                             android:textColor="@color/theme_text1"
                             />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="笔友会"
-                            android:textColor="@color/theme_text1"
                             android:layout_marginTop="4dp"
+                            android:text="的笔友会"
+                            android:textColor="@color/theme_text1"
                             />
                     </LinearLayout>
                 </LinearLayout>
@@ -261,9 +272,10 @@
                             android:layout_marginTop="5dp"
                             >
                             <com.github.fastshape.MyTextView
+                                android:id="@+id/tv_my_make_flag"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="一代文豪"
+                                tools:text="一代文豪"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
                                 android:paddingTop="2dp"
@@ -275,6 +287,7 @@
                                 android:layout_marginRight="10dp"
                                 />
                             <com.willy.ratingbar.BaseRatingBar
+                                android:id="@+id/brb_my_make_num"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
@@ -304,16 +317,18 @@
                             android:layout_marginTop="6dp"
                             >
                             <TextView
+                                android:id="@+id/tv_my_make_current_exp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="1212"
+                                tools:text="1212"
                                 android:textColor="@color/theme_text2"
                                 android:textSize="11sp"
                                 />
                             <TextView
+                                android:id="@+id/tv_my_make_max_exp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="/6000"
+                                tools:text="/6000"
                                 android:textColor="@color/theme_text1"
                                 android:textSize="11sp"
                                 />
@@ -324,6 +339,7 @@
                                 android:layout_height="4dp"
                                 android:layout_marginLeft="10dp"
                                 app:borderWidth="1px"
+                                android:layerType="none"
                                 />
                         </LinearLayout>
                     </LinearLayout>
@@ -356,9 +372,10 @@
                             android:layout_marginTop="5dp"
                             >
                             <com.github.fastshape.MyTextView
+                                android:id="@+id/tv_my_read_flag"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="一代文豪"
+                                tools:text="博览群书"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
                                 android:paddingTop="2dp"
@@ -370,6 +387,7 @@
                                 android:layout_marginRight="10dp"
                                 />
                             <com.willy.ratingbar.BaseRatingBar
+                                android:id="@+id/brb_my_read_num"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
@@ -399,16 +417,18 @@
                             android:layout_marginTop="6dp"
                             >
                             <TextView
+                                android:id="@+id/tv_my_read_current_exp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="1212"
+                                tools:text="1212"
                                 android:textColor="@color/theme_text2"
                                 android:textSize="11sp"
                                 />
                             <TextView
+                                android:id="@+id/tv_my_read_max_exp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="/6000"
+                                tools:text="/6000"
                                 android:textColor="@color/theme_text1"
                                 android:textSize="11sp"
                                 />
@@ -419,11 +439,13 @@
                                 android:layout_height="4dp"
                                 android:layout_marginLeft="10dp"
                                 app:borderWidth="1px"
+                                android:layerType="software"
                                 />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
                 <com.github.fastshape.MyTextView
+                    android:id="@+id/tv_my_wdwz"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:text="我的文章"
@@ -440,6 +462,7 @@
                     android:paddingLeft="13dp"
                     />
                 <com.github.fastshape.MyTextView
+                    android:id="@+id/tv_my_wdtz"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     app:left_width="17dp"
@@ -457,6 +480,7 @@
                     android:layout_marginBottom="2px"
                     />
                 <com.github.fastshape.MyTextView
+                    android:id="@+id/tv_my_wdtj"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     app:left_width="14dp"
@@ -474,6 +498,7 @@
                     />
 
                 <com.github.fastshape.MyTextView
+                    android:id="@+id/tv_my_wdfs"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     app:left_width="14dp"
@@ -490,6 +515,7 @@
                     android:paddingLeft="13dp"
                     />
                 <com.github.fastshape.MyTextView
+                    android:id="@+id/tv_my_wdxx"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     app:solidColor="@color/white"
@@ -505,6 +531,7 @@
                     android:paddingLeft="10dp"
                     />
                 <com.github.fastshape.MyTextView
+                    android:id="@+id/tv_my_wdkb"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     app:left_width="17dp"
@@ -522,6 +549,7 @@
                     android:layout_marginBottom="2px"
                     />
                 <com.github.fastshape.MyTextView
+                    android:id="@+id/tv_my_wdsc"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     app:left_width="16dp"
@@ -538,6 +566,7 @@
                     android:paddingLeft="11dp"
                     />
                 <com.github.fastshape.MyTextView
+                    android:id="@+id/tv_my_wdlljl"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     app:left_width="17dp"
