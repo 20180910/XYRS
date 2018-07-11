@@ -5,7 +5,7 @@ package com.sk.xyrs;
  */
 
 public class IntentParam {
-    public static final String isQianZhengPay = "isQianZhengPay";
+    public static final String xieYiType = "xieYiType";
     public static final String selectShenQing = "selectShenQing";
     public static final String ziXunId = "ziXunId";
     public static final String guoJia = "guoJia";

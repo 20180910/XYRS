@@ -33,7 +33,7 @@ public abstract class BaseFragment extends MyBaseFragment {
         return SPUtils.getString(mContext, Config.user_id, "0");
     }
     protected void clearUserId() {
-        SPUtils.removeKey(mContext, AppXml.user_id);
+        SPUtils.removeKey(mContext, AppXml.userId);
     }
     public boolean noLogin(){
         if("0".equals(getUserId())){

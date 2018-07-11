@@ -4,9 +4,10 @@ package com.sk.xyrs;
 import android.app.Application;
 import android.content.Context;
 
+import com.aspsine.multithreaddownload.DownloadConfiguration;
+import com.aspsine.multithreaddownload.DownloadManager;
 import com.github.androidtools.SPUtils;
 import com.github.baseclass.view.Loading;
-import com.github.fastshape.MyTextView;
 import com.github.retrofitutil.NetWorkManager;
 import com.sdklibrary.base.ali.pay.MyAliPay;
 import com.sdklibrary.base.qq.share.MyQQShare;
@@ -22,19 +23,14 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-//        TypefaceUtil.setDefaultTypeface(this,"SERIF", "fonts/nicai.TTF");
-        MyTextView a=new MyTextView(this);
-        //正式
-        String baseUrl="http://121.40.186.118:10088/";
-
         if(true&&BuildConfig.DEBUG){
             //测试
-            baseUrl="http://121.40.186.118:10089/";
+            NetWorkManager.getInstance(getApplicationContext(),"http://121.40.186.118:10010/",BuildConfig.DEBUG).complete();
+        }else{
+            //正式
+            NetWorkManager.getInstance(getApplicationContext(),"http://121.40.186.118:10010/",BuildConfig.DEBUG).complete();
         }
-
-        baseUrl="http://121.40.186.118:10089/";
-        NetWorkManager.getInstance(getApplicationContext(),baseUrl,BuildConfig.DEBUG).complete();
-//        initDownloader();
+        initDownloader();
         Loading.setLoadView(R.layout.app_loading_view);
 
         MyWXShare.setAppId(Config.weixing_id,Config.weixing_AppSecret);
@@ -42,12 +38,12 @@ public class MyApplication extends Application {
         MyAliPay.setConfig(Config.zhifubao_app_id,Config.zhifubao_pid,Config.zhifubao_rsa2);
         MyWXPay.setConfig(Config.weixing_id,Config.weixing_mch_id,Config.weixing_miyao);
     }
-   /* private void initDownloader() {
+    private void initDownloader() {
         DownloadConfiguration configuration = new DownloadConfiguration();
         configuration.setMaxThreadNum(8);
         configuration.setThreadNum(2);
         DownloadManager.getInstance().init(getApplicationContext(), configuration);
-    }*/
+    }
 
    //经度
    public static double longitude;//=121.432986;

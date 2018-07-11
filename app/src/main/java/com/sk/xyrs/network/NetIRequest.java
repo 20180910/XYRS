@@ -23,7 +23,7 @@ import retrofit2.http.QueryMap;
  */
 
 public interface NetIRequest {
-    @GET("api/MQLib/GetSMSCode")
+    @GET("api/Lib/GetSMSCode")
     Call<ResponseObj<BaseObj>> getMsgCode(@QueryMap Map<String, String> map);
 
     //base64文件上传

@@ -52,18 +52,18 @@ public abstract class BaseActivity extends MyBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setAppTitleColor(R.color.theme_text1);
         setAppRightTitleColor(R.color.theme_text2);
+        super.onCreate(savedInstanceState);
 
     }
 
     protected String getUserId() {
-        return SPUtils.getString(mContext, AppXml.user_id, noLoginCode);
+        return SPUtils.getString(mContext, AppXml.userId, noLoginCode);
     }
 
     protected void clearUserId() {
-        SPUtils.removeKey(mContext, AppXml.user_id);
+        SPUtils.removeKey(mContext, AppXml.userId);
     }
 
     public boolean noLogin() {
@@ -250,11 +250,9 @@ public abstract class BaseActivity extends MyBaseActivity {
                     public void onNext(Long aLong) {
                         textView.setText("剩下" + aLong + "s");
                     }
-
                     @Override
                     public void onError(Throwable t) {
                     }
-
                     @Override
                     public void onComplete() {
                         textView.setEnabled(true);

@@ -16,6 +16,16 @@ public class BaseObj implements Serializable {
     private String user_agreement;//用户协议
     protected int message_sink;//消息设置1：开，0：关
 
+    private String agreement;
+
+    public String getAgreement() {
+        return agreement;
+    }
+
+    public void setAgreement(String agreement) {
+        this.agreement = agreement;
+    }
+
     public int getMessage_sink() {
         return message_sink;
     }
