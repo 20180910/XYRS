@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/bg_color"
+    >
+<com.github.fastshape.MyTextView
+    android:id="@+id/tv_select_flag_value"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    tools:text="爱情"
+    android:gravity="center"
+    app:all_line="true"
+    app:borderColor="@color/theme_text1"
+    app:bottom_width="2px"
+    app:radius="4dp"
+    android:textColor="@color/theme_text1"
+    />
+</LinearLayout>

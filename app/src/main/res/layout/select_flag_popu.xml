@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.github.fastshape.MyRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              app:clipRadius="8dp"
+    >
+    <com.github.fastshape.MyRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:solidColor="@color/white"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:id="@+id/ll_select_top"
+    >
+   <com.github.fastshape.MyTextView
+       android:id="@+id/tv_select_flag_skip"
+       android:layout_width="wrap_content"
+       android:layout_height="24dp"
+       android:text="跳过"
+       android:layout_gravity="right"
+       app:borderColor="@color/theme_text1"
+       app:all_line="true"
+       android:gravity="center"
+       app:bottom_width="2px"
+       android:paddingRight="13dp"
+       android:paddingLeft="13dp"
+       app:radius="12dp"
+       android:textSize="11sp"
+       android:textColor="@color/theme_text1"
+       />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择您笔会的标签"
+        android:textColor="@color/theme_text1"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="30dp"
+        />
+</LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_select_flag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_select_top"
+        android:layout_above="@+id/tv_select_flag_commit"
+        android:layout_marginBottom="10dp"
+        >
+    </android.support.v7.widget.RecyclerView>
+    <com.github.fastshape.MyTextView
+        android:id="@+id/tv_select_flag_commit"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:solidColor="@color/theme_text2"
+        app:radius="4dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        app:pressColor="@color/press_theme_text2"
+        />
+</com.github.fastshape.MyRelativeLayout>
+</com.github.fastshape.MyRelativeLayout>

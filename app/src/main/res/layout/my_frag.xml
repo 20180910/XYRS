@@ -339,7 +339,6 @@
                                 android:layout_height="4dp"
                                 android:layout_marginLeft="10dp"
                                 app:borderWidth="1px"
-                                android:layerType="none"
                                 />
                         </LinearLayout>
                     </LinearLayout>
@@ -439,7 +438,6 @@
                                 android:layout_height="4dp"
                                 android:layout_marginLeft="10dp"
                                 app:borderWidth="1px"
-                                android:layerType="software"
                                 />
                         </LinearLayout>
                     </LinearLayout>
@@ -547,6 +545,7 @@
                     android:paddingRight="13dp"
                     android:paddingLeft="10dp"
                     android:layout_marginBottom="2px"
+                    android:visibility="gone"
                     />
                 <com.github.fastshape.MyTextView
                     android:id="@+id/tv_my_wdsc"

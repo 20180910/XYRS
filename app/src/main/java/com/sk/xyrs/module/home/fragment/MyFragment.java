@@ -2,21 +2,32 @@ package com.sk.xyrs.module.home.fragment;
 
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
+import com.github.androidtools.PhoneUtils;
 import com.github.androidtools.SPUtils;
+import com.github.androidtools.inter.MyOnClickListener;
+import com.github.baseclass.adapter.MyLoadMoreAdapter;
+import com.github.baseclass.adapter.MyRecyclerViewHolder;
 import com.github.fastshape.MyTextView;
+import com.github.mydialog.MySimpleDialog;
 import com.github.progress.MyProgress;
 import com.sk.xyrs.AppXml;
 import com.sk.xyrs.R;
 import com.sk.xyrs.base.BaseFragment;
 import com.sk.xyrs.base.MyCallBack;
+import com.sk.xyrs.base.SpaceItemDecoration;
+import com.sk.xyrs.module.my.activity.SettingActivity;
 import com.sk.xyrs.module.my.network.ApiRequest;
+import com.sk.xyrs.module.my.network.response.LableObj;
 import com.sk.xyrs.module.my.network.response.LoginObj;
 import com.willy.ratingbar.BaseRatingBar;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
@@ -112,6 +123,7 @@ public class MyFragment extends BaseFragment {
     public void onResume() {
         super.onResume();
         setUserInfo(null);
+
     }
 
     @Override
@@ -160,58 +172,115 @@ public class MyFragment extends BaseFragment {
 
                 SPUtils.setPrefInt(mContext, AppXml.read_fenshu, obj.getRead_fenshu());
                 SPUtils.setPrefInt(mContext, AppXml.read_xing_num, obj.getRead_xing_num());
-                SPUtils.setPrefInt(mContext, AppXml.is_show_biaoqian, obj.getIs_show_biaoqian());
-                SPUtils.setPrefInt(mContext, AppXml.is_show_nicheng, obj.getIs_show_nicheng());
+//                SPUtils.setPrefInt(mContext, AppXml.is_show_biaoqian, obj.getIs_show_biaoqian());
+//                SPUtils.setPrefInt(mContext, AppXml.is_show_nicheng, obj.getIs_show_nicheng());
             }
         });
     }
-    private boolean isFirstInto=true;
+
+    private boolean isFirstInto = true;
+
     private void setUserInfo(LoginObj obj) {
-        if(obj==null){
-            obj=new LoginObj();
-            obj.setBi_name(SPUtils.getString(mContext, AppXml.bi_name,null));
-            obj.setSignature(SPUtils.getString(mContext, AppXml.signature,null));
-            obj.setRongshu_leaf(SPUtils.getInt(mContext, AppXml.rongshu_leaf,0));
-            obj.setCard_bag(SPUtils.getInt(mContext, AppXml.card_bag,0));
-            obj.setGuanzhu(SPUtils.getInt(mContext, AppXml.guanzhu,0));
-            obj.setFensi(SPUtils.getInt(mContext, AppXml.fensi,0));
-            obj.setCreate_name(SPUtils.getString(mContext, AppXml.create_name,null));
-            obj.setCreate_xing_num(SPUtils.getInt(mContext, AppXml.create_xing_num,0));
-            obj.setCreate_value(SPUtils.getInt(mContext, AppXml.create_value,0));
-            obj.setCreate_fenshu(SPUtils.getInt(mContext, AppXml.create_fenshu,0));
-            obj.setRead_name(SPUtils.getString(mContext, AppXml.read_name,null));
-            obj.setRead_xing_num(SPUtils.getInt(mContext, AppXml.read_xing_num,0));
-            obj.setRead_fenshu(SPUtils.getInt(mContext, AppXml.read_fenshu,0));
-            obj.setRead_value(SPUtils.getInt(mContext, AppXml.read_value,0));
+        if (obj == null) {
+            obj = new LoginObj();
+            obj.setBi_name(SPUtils.getString(mContext, AppXml.bi_name, null));
+            obj.setSignature(SPUtils.getString(mContext, AppXml.signature, null));
+            obj.setRongshu_leaf(SPUtils.getInt(mContext, AppXml.rongshu_leaf, 0));
+            obj.setCard_bag(SPUtils.getInt(mContext, AppXml.card_bag, 0));
+            obj.setGuanzhu(SPUtils.getInt(mContext, AppXml.guanzhu, 0));
+            obj.setFensi(SPUtils.getInt(mContext, AppXml.fensi, 0));
+            obj.setCreate_name(SPUtils.getString(mContext, AppXml.create_name, null));
+            obj.setCreate_xing_num(SPUtils.getInt(mContext, AppXml.create_xing_num, 0));
+            obj.setCreate_value(SPUtils.getInt(mContext, AppXml.create_value, 0));
+            obj.setCreate_fenshu(SPUtils.getInt(mContext, AppXml.create_fenshu, 0));
+            obj.setRead_name(SPUtils.getString(mContext, AppXml.read_name, null));
+            obj.setRead_xing_num(SPUtils.getInt(mContext, AppXml.read_xing_num, 0));
+            obj.setRead_fenshu(SPUtils.getInt(mContext, AppXml.read_fenshu, 0));
+            obj.setRead_value(SPUtils.getInt(mContext, AppXml.read_value, 0));
+
+            obj.setIs_show_biaoqian(SPUtils.getInt(mContext, AppXml.is_show_biaoqian, 0));
         }
         tv_my_name.setText(obj.getBi_name());
         tv_my_sign.setText(obj.getSignature());
-        tv_my_shuye_num.setText(obj.getRongshu_leaf()+"");
-        tv_my_kabao.setText(obj.getCard_bag()+"");
-        tv_my_guanzhu.setText(obj.getGuanzhu()+"");
-        tv_my_fensi.setText(obj.getFensi()+"");
+        tv_my_shuye_num.setText(obj.getRongshu_leaf() + "");
+        tv_my_kabao.setText(obj.getCard_bag() + "");
+        tv_my_guanzhu.setText(obj.getGuanzhu() + "");
+        tv_my_fensi.setText(obj.getFensi() + "");
 
         tv_my_make_flag.setText(obj.getCreate_name());
         brb_my_make_num.setRating(obj.getCreate_xing_num());
 
-        tv_my_make_current_exp.setText(obj.getCreate_value()+"");
-        tv_my_make_max_exp.setText("/"+obj.getCreate_fenshu());
+        tv_my_make_current_exp.setText(obj.getCreate_value() + "");
+        tv_my_make_max_exp.setText("/" + obj.getCreate_fenshu());
 
-        mp_make_exp.setMaxProgress(obj.getCreate_fenshu()==0?1:obj.getCreate_fenshu());//
-        mp_make_exp.setProgress(obj.getCreate_value(),isFirstInto);
+        mp_make_exp.setMaxProgress(obj.getCreate_fenshu());
+        mp_make_exp.setNowProgress(obj.getCreate_value(), isFirstInto);
 
         tv_my_read_flag.setText(obj.getRead_name());
         brb_my_read_num.setRating(obj.getRead_xing_num());
 
-        tv_my_read_current_exp.setText(obj.getRead_value()+"");
-        tv_my_read_max_exp.setText("/"+obj.getRead_fenshu());
-
-        mp_read_exp.setMaxProgress(obj.getRead_fenshu()==0?1:obj.getRead_fenshu());
-        mp_read_exp.setProgress(obj.getRead_value(),isFirstInto);
+        tv_my_read_current_exp.setText(obj.getRead_value() + "");
+        tv_my_read_max_exp.setText("/" + obj.getRead_fenshu());
 
 
-        isFirstInto=false;
+        mp_read_exp.setMaxProgress(obj.getRead_fenshu());
+        mp_read_exp.setNowProgress(obj.getRead_value(), isFirstInto);
+        isFirstInto = false;
 
+        if (obj.getIs_show_biaoqian() == 0) {
+//        if (obj.getIs_show_biaoqian() == 1) {
+            Map<String,String>map=new HashMap<String,String>();
+            map.put("rnd",getRnd());
+            map.put("sign",getSign(map));
+            ApiRequest.getFlag(map, new MyCallBack<List<LableObj>>(mContext) {
+                @Override
+                public void onSuccess(List<LableObj> list, int errorCode, String msg) {
+                    showSelectFlag(list);
+                }
+            });
+
+        }
+
+    }
+
+    private void showSelectFlag(List<LableObj> list) {
+        final MySimpleDialog dialog = new MySimpleDialog(mContext);
+
+        View flagView = getLayoutInflater().inflate(R.layout.select_flag_popu, null);
+
+        flagView.findViewById(R.id.tv_select_flag_skip).setOnClickListener(new MyOnClickListener() {
+            @Override
+            protected void onNoDoubleClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        RecyclerView rv_select_flag=flagView.findViewById(R.id.rv_select_flag);
+        MyLoadMoreAdapter adapter=new MyLoadMoreAdapter<LableObj>(mContext,R.layout.select_flag_item,pageSize) {
+            @Override
+            public void bindData(MyRecyclerViewHolder holder, int position, LableObj bean) {
+                holder.setText(R.id.tv_select_flag_value,bean.getTitle());
+            }
+        };
+        adapter.setList(list);
+        rv_select_flag.setLayoutManager(new GridLayoutManager(mContext,3));
+        rv_select_flag.addItemDecoration(new SpaceItemDecoration(PhoneUtils.dip2px(mContext,10)));
+        rv_select_flag.setAdapter(adapter);
+
+        flagView.findViewById(R.id.tv_select_flag_commit).setOnClickListener(new MyOnClickListener() {
+            @Override
+            protected void onNoDoubleClick(View view) {
+                if(false){
+                    showMsg("请选择标签");
+                }
+            }
+        });
+
+        dialog.setWidth(PhoneUtils.getScreenWidth(mContext)-PhoneUtils.dip2px(mContext,65));
+        dialog.setHeight(PhoneUtils.getScreenHeight(mContext)-PhoneUtils.dip2px(mContext,120));
+        dialog.setContentView(flagView);
+        dialog.setRadius(PhoneUtils.dip2px(mContext, 5));
+        dialog.setBackgroundDrawable(null);
+        dialog.show();
     }
 
     @Override
@@ -219,10 +288,11 @@ public class MyFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.app_right_tv,R.id.tv_my_recharge, R.id.tv_my_edit, R.id.tv_my_wdwz, R.id.tv_my_wdtz, R.id.tv_my_wdtj, R.id.tv_my_wdfs, R.id.tv_my_wdxx, R.id.tv_my_wdkb, R.id.tv_my_wdsc, R.id.tv_my_wdlljl})
+    @OnClick({R.id.app_right_tv, R.id.tv_my_recharge, R.id.tv_my_edit, R.id.tv_my_wdwz, R.id.tv_my_wdtz, R.id.tv_my_wdtj, R.id.tv_my_wdfs, R.id.tv_my_wdxx, R.id.tv_my_wdkb, R.id.tv_my_wdsc, R.id.tv_my_wdlljl})
     public void onViewClick(View view) {
         switch (view.getId()) {
             case R.id.app_right_tv:
+                STActivity(SettingActivity.class);
                 break;
             case R.id.tv_my_recharge:
                 break;

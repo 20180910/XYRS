@@ -141,7 +141,7 @@ public class MainActivity extends BaseActivity {
                         selectHome();
                         break;
                     case 2:
-//                        if (TextUtils.equals(noLoginCode, getUserId())) {
+//                        if (noLogin()) {
 //                            STActivity(LoginActivity.class);
 //                            selectView.setChecked(true);
 //                        } else {
@@ -149,8 +149,7 @@ public class MainActivity extends BaseActivity {
 //                        }
                         break;
                     case 3:
-                        STActivity(LoginActivity.class);
-                       /* if (TextUtils.equals(noLoginCode, getUserId())) {
+                       /* if (noLogin()) {
                             STActivity(LoginActivity.class);
                             selectView.setChecked(true);
                         } else {*/
@@ -158,7 +157,7 @@ public class MainActivity extends BaseActivity {
 //                        }
                         break;
                     case 4:
-                       /* if (TextUtils.equals(noLoginCode, getUserId())) {
+                       /* if (noLogin()) {
                             STActivity(LoginActivity.class);
                             selectView.setChecked(true);
                         } else {*/
@@ -166,12 +165,12 @@ public class MainActivity extends BaseActivity {
 //                        }
                         break;
                     case 5:
-                       /* if (TextUtils.equals(noLoginCode, getUserId())) {
+                        if (noLogin()) {
                             STActivity(LoginActivity.class);
                             selectView.setChecked(true);
-                        } else {*/
-                        selectMy();
-//                        }
+                        } else {
+                            selectMy();
+                        }
                         break;
                 }
             }

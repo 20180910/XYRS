@@ -5,7 +5,7 @@ package com.sk.xyrs;
  */
 
 public class AppXml {
-    public static final String userHasPhone = "userHasPhone";
+    public static final String firstShowFlag = "firstShowFlag";
     public static final String liuXueImg = "liuXueImg";
     public static final String youXueImg = "youXueImg";
     public static final String userId = "userId";

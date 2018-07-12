@@ -2,6 +2,7 @@ package com.sk.xyrs.module.my.network;
 
 import com.library.base.BaseObj;
 import com.library.base.ResponseObj;
+import com.sk.xyrs.module.my.network.response.LableObj;
 import com.sk.xyrs.module.my.network.response.LoginObj;
 import com.sk.xyrs.module.my.network.response.LoginQuestionObj;
 
@@ -38,5 +39,13 @@ public interface IRequest {
     //找回密码
     @GET("api/User/GetResetPassword")
     Call<ResponseObj<BaseObj>> findPWD(@QueryMap Map<String, String> map);
+
+    //设置笔名
+    @GET("api/User/GetPerfectPenName")
+    Call<ResponseObj<BaseObj>> setBiName(@QueryMap Map<String, String> map);
+
+    //获取标签
+    @GET("api/User/GetLable")
+    Call<ResponseObj<List<LableObj>>> getFlag(@QueryMap Map<String, String> map);
 
 }

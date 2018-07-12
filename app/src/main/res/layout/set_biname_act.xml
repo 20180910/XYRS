@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/bg_color"
+    >
+<include layout="@layout/app_title"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/theme_text5"
+    >
+    <com.sk.xyrs.view.MyEditText
+        android:id="@+id/et_set_biname"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        app:solidColor="@color/white"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        android:hint="请在此输入符合您气质的名字"
+        android:textColor="@color/theme_text2"
+        android:textColorHint="@color/theme_text4"
+        android:textSize="16sp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-笔名是唯一的身份凭证,只能设置一次"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/theme_text2"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-如果没有设置过笔名,您的好友会看到系统自动生成的笔名"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/theme_text2"
+        />
+</LinearLayout>
+</LinearLayout>

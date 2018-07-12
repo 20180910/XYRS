@@ -161,6 +161,10 @@ public class LoginActivity extends BaseActivity {
                 SPUtils.setPrefInt(mContext, AppXml.is_show_nicheng,obj.getIs_show_nicheng());
 
                 RxBus.getInstance().post(new LoginSuccessEvent(LoginSuccessEvent.status_1));
+
+                if(obj.getIs_show_nicheng()==1){
+                    STActivity(SetBiNameActivity.class);
+                }
                 finish();
             }
         });

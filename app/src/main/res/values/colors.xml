@@ -51,6 +51,9 @@
     <color name="theme_text4">#ceefd4</color>
     <color name="theme_text5">#f0fbf1</color>
 
+    <color name="press_theme_text1">#FF095616</color>
+    <color name="press_theme_text2">#239936</color>
+
     <color name="home_green">#06C1AE</color>
     <color name="home_text_color">#419BF3</color>
     <color name="orange">#FFC820</color>
