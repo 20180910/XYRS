@@ -10,6 +10,15 @@ public class LableObj extends BaseObj {
 
     private int id;
     private String title;
+    private boolean isSelect;
+
+    public boolean isSelect() {
+        return isSelect;
+    }
+
+    public void setSelect(boolean select) {
+        isSelect = select;
+    }
 
     public int getId() {
         return id;
