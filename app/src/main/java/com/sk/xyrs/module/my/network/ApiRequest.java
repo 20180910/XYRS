@@ -5,6 +5,7 @@ import com.library.base.BaseApiRequest;
 import com.sk.xyrs.Config;
 import com.sk.xyrs.base.MyCallBack;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -45,6 +46,10 @@ public class ApiRequest extends BaseApiRequest {
     public static void getFlag(Map map, MyCallBack callBack) {
         if (notNetWork(callBack.getContext())) { callBack.onFailure(null, new NoNetworkException(Config.noNetWork)); return;  }
         getGeneralClient(IRequest.class).getFlag(map).enqueue(callBack);
+    }
+    public static void setFlag(Map map, List list, MyCallBack callBack) {
+        if (notNetWork(callBack.getContext())) { callBack.onFailure(null, new NoNetworkException(Config.noNetWork)); return;  }
+        getGeneralClient(IRequest.class).setFlag(map,list).enqueue(callBack);
     }
 
 }

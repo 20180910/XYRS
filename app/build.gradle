@@ -60,11 +60,11 @@ dependencies {
 
     implementation project(':baselibrary')
     implementation(name: 'androidutils', ext: 'aar')
-    implementation(name: 'baseclass', ext: 'aar')
+    implementation(name: 'androidbaseclass', ext: 'aar')
     implementation(name: 'download', ext: 'aar')
     implementation(name: 'myrefresh', ext: 'aar')
     implementation(name: 'sdklibrary', ext: 'aar')
-    implementation(name: 'SimpleDialog', ext: 'aar')
+    implementation(name: 'Dialog', ext: 'aar')
 //    implementation(name: 'MyProgress', ext: 'aar')
 //    implementation(name: 'rxandroid-2.0.2', ext: 'aar')
 

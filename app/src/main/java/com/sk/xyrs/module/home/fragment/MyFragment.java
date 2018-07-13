@@ -15,6 +15,7 @@ import com.github.baseclass.adapter.MyRecyclerViewHolder;
 import com.github.fastshape.MyTextView;
 import com.github.mydialog.MySimpleDialog;
 import com.github.progress.MyProgress;
+import com.library.base.BaseObj;
 import com.sk.xyrs.AppXml;
 import com.sk.xyrs.R;
 import com.sk.xyrs.base.BaseFragment;
@@ -26,6 +27,7 @@ import com.sk.xyrs.module.my.network.response.LableObj;
 import com.sk.xyrs.module.my.network.response.LoginObj;
 import com.willy.ratingbar.BaseRatingBar;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -94,6 +96,7 @@ public class MyFragment extends BaseFragment {
     MyTextView tv_my_wdsc;
     @BindView(R.id.tv_my_wdlljl)
     MyTextView tv_my_wdlljl;
+    private MyLoadMoreAdapter flagAdapter;
 
     @Override
     protected int getContentView() {
@@ -173,7 +176,7 @@ public class MyFragment extends BaseFragment {
                 SPUtils.setPrefInt(mContext, AppXml.read_fenshu, obj.getRead_fenshu());
                 SPUtils.setPrefInt(mContext, AppXml.read_xing_num, obj.getRead_xing_num());
 //                SPUtils.setPrefInt(mContext, AppXml.is_show_biaoqian, obj.getIs_show_biaoqian());
-//                SPUtils.setPrefInt(mContext, AppXml.is_show_nicheng, obj.getIs_show_nicheng());
+                SPUtils.setPrefInt(mContext, AppXml.is_show_nicheng, obj.getIs_show_nicheng());
             }
         });
     }
@@ -198,7 +201,6 @@ public class MyFragment extends BaseFragment {
             obj.setRead_fenshu(SPUtils.getInt(mContext, AppXml.read_fenshu, 0));
             obj.setRead_value(SPUtils.getInt(mContext, AppXml.read_value, 0));
 
-            obj.setIs_show_biaoqian(SPUtils.getInt(mContext, AppXml.is_show_biaoqian, 0));
         }
         tv_my_name.setText(obj.getBi_name());
         tv_my_sign.setText(obj.getSignature());
@@ -227,15 +229,18 @@ public class MyFragment extends BaseFragment {
         mp_read_exp.setNowProgress(obj.getRead_value(), isFirstInto);
         isFirstInto = false;
 
-        if (obj.getIs_show_biaoqian() == 0) {
-//        if (obj.getIs_show_biaoqian() == 1) {
+//        if (SPUtils.getInt(mContext, AppXml.is_show_biaoqian, 0) == 0) {
+        if (SPUtils.getInt(mContext, AppXml.is_show_biaoqian, 0)== 1) {
+            SPUtils.setPrefInt(mContext, AppXml.is_show_biaoqian, 0);
             Map<String,String>map=new HashMap<String,String>();
             map.put("rnd",getRnd());
             map.put("sign",getSign(map));
             ApiRequest.getFlag(map, new MyCallBack<List<LableObj>>(mContext) {
                 @Override
                 public void onSuccess(List<LableObj> list, int errorCode, String msg) {
-                    showSelectFlag(list);
+                    if(notEmpty(list)){
+//                        showSelectFlag(list);
+                    }
                 }
             });
 
@@ -255,31 +260,69 @@ public class MyFragment extends BaseFragment {
             }
         });
         RecyclerView rv_select_flag=flagView.findViewById(R.id.rv_select_flag);
-        MyLoadMoreAdapter adapter=new MyLoadMoreAdapter<LableObj>(mContext,R.layout.select_flag_item,pageSize) {
+        flagAdapter = new MyLoadMoreAdapter<LableObj>(mContext, R.layout.select_flag_item,pageSize) {
             @Override
-            public void bindData(MyRecyclerViewHolder holder, int position, LableObj bean) {
-                holder.setText(R.id.tv_select_flag_value,bean.getTitle());
+            public void bindData(MyRecyclerViewHolder holder, int position, final LableObj bean) {
+               final MyTextView tv_select_flag_value = (MyTextView) holder.getTextView(R.id.tv_select_flag_value);
+                tv_select_flag_value.setText(bean.getTitle());
+                setViewSelect(bean, tv_select_flag_value);
+                tv_select_flag_value.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        bean.setSelect(!bean.isSelect());
+                        setViewSelect(bean, tv_select_flag_value);
+                    }
+                });
+            }
+            private void setViewSelect(LableObj bean, MyTextView tv_select_flag_value) {
+                if(bean.isSelect()){
+                    tv_select_flag_value.getViewHelper().setSolidColor(ContextCompat.getColor(mContext, R.color.theme_text1)).complete();
+                    tv_select_flag_value.setTextColor(ContextCompat.getColor(mContext,R.color.white));
+                }else{
+                    tv_select_flag_value.getViewHelper().setSolidColor(ContextCompat.getColor(mContext,R.color.white)).complete();
+                    tv_select_flag_value.setTextColor(ContextCompat.getColor(mContext,R.color.theme_text1));
+                }
             }
         };
-        adapter.setList(list);
+        flagAdapter.setList(list);
         rv_select_flag.setLayoutManager(new GridLayoutManager(mContext,3));
         rv_select_flag.addItemDecoration(new SpaceItemDecoration(PhoneUtils.dip2px(mContext,10)));
-        rv_select_flag.setAdapter(adapter);
+        rv_select_flag.setAdapter(flagAdapter);
 
         flagView.findViewById(R.id.tv_select_flag_commit).setOnClickListener(new MyOnClickListener() {
             @Override
             protected void onNoDoubleClick(View view) {
-                if(false){
+                List<String>list=new ArrayList<>();
+                for (int i = 0; i <flagAdapter.getList().size() ; i++) {
+                    LableObj lableObj = (LableObj) flagAdapter.getList().get(i);
+                    if(lableObj.isSelect()){
+                        list.add(lableObj.getId()+"");
+                    }
+                }
+                if(list.size()>0){
+                    setUserLable(list);
+                }else{
                     showMsg("请选择标签");
                 }
+            }
+            private void setUserLable(List<String>list) {
+                showLoading();
+                Map<String,String>map=new HashMap<String,String>();
+                map.put("user_id",getUserId());
+                map.put("sign",getSign(map));
+                ApiRequest.setFlag(map, list,new MyCallBack<BaseObj>(mContext) {
+                    @Override
+                    public void onSuccess(BaseObj obj, int errorCode, String msg) {
+//                        showMsg(msg);
+                        dialog.dismiss();
+                    }
+                });
             }
         });
 
         dialog.setWidth(PhoneUtils.getScreenWidth(mContext)-PhoneUtils.dip2px(mContext,65));
         dialog.setHeight(PhoneUtils.getScreenHeight(mContext)-PhoneUtils.dip2px(mContext,120));
         dialog.setContentView(flagView);
-        dialog.setRadius(PhoneUtils.dip2px(mContext, 5));
-        dialog.setBackgroundDrawable(null);
         dialog.show();
     }
 

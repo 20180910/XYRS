@@ -3,7 +3,7 @@ package com.sk.xyrs.module.my.activity;
 import android.content.DialogInterface;
 import android.view.View;
 
-import com.github.baseclass.view.MyDialog;
+import com.github.mydialog.MyDialog;
 import com.github.rxbus.RxBus;
 import com.sk.xyrs.R;
 import com.sk.xyrs.base.BaseActivity;
@@ -34,10 +34,10 @@ public class SettingActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.ll_setting_top})
+    @OnClick({R.id.ll_setting_bottom})
     protected void onViewClick(View v) {
         switch (v.getId()){
-            case R.id.ll_setting_top:
+            case R.id.ll_setting_bottom:
                 MyDialog.Builder mDialog=new MyDialog.Builder(mContext);
                 mDialog.setMessage("是否确认退出登录?");
                 mDialog.setNegativeButton(new DialogInterface.OnClickListener() {
@@ -58,6 +58,7 @@ public class SettingActivity extends BaseActivity {
                     }
                 });
                 mDialog.create().show();
+
             break;
         }
     }

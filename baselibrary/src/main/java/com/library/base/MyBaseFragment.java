@@ -29,7 +29,7 @@ import com.github.baseclass.adapter.LoadMoreAdapter;
 import com.github.baseclass.adapter.MyLoadMoreAdapter;
 import com.github.baseclass.fragment.IBaseFragment;
 import com.github.baseclass.permission.PermissionCallback;
-import com.github.baseclass.view.MyDialog;
+import com.github.mydialog.MyDialog;
 import com.library.R;
 
 import java.io.File;

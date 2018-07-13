@@ -9,8 +9,8 @@ import android.widget.ImageButton;
 
 import com.github.androidtools.SPUtils;
 import com.github.androidtools.inter.MyOnClickListener;
-import com.github.baseclass.view.MyDialog;
 import com.github.fastshape.MyRadioButton;
+import com.github.mydialog.MyDialog;
 import com.github.rxbus.MyConsumer;
 import com.library.base.bean.AppVersionObj;
 import com.library.base.bean.PayObj;
@@ -318,7 +318,7 @@ public class MainActivity extends BaseActivity {
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
 
-//                            downloadApp(obj);
+//                          downloadApp(obj);
                         }
                     });
                     mDialog.create().show();

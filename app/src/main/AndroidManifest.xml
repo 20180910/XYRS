@@ -121,6 +121,7 @@
         <activity android:name=".module.biyou.activity.TaDeZhuYeActivity"/>
         <activity android:name=".module.home.activity.TieZiDetailActivity"/>
         <activity android:name=".module.my.activity.LoginForPWDActivity"/>
+        <activity android:name=".module.my.activity.SetBiNameActivity"/>
 
 
     </application>

@@ -221,6 +221,10 @@ public class LoginActivity extends BaseActivity {
         if(resultCode==RESULT_OK){
             switch (requestCode){
                 case 100:
+                    int flag = SPUtils.getInt(mContext, AppXml.is_show_nicheng, 0);
+                    if(flag==1){
+                        STActivity(SetBiNameActivity.class);
+                    }
                     finish();
                 break;
             }
