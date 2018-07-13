@@ -122,6 +122,7 @@
         <activity android:name=".module.home.activity.TieZiDetailActivity"/>
         <activity android:name=".module.my.activity.LoginForPWDActivity"/>
         <activity android:name=".module.my.activity.SetBiNameActivity"/>
+        <activity android:name=".module.my.activity.NameAndSignActivity"/>
 
 
     </application>

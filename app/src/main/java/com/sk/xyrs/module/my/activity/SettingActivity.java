@@ -20,7 +20,6 @@ public class SettingActivity extends BaseActivity {
     @Override
     protected int getContentView() {
         setAppTitle("设置");
-        hiddenBackIcon();
         return R.layout.setting_act;
     }
 

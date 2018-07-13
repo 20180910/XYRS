@@ -21,6 +21,7 @@ import com.sk.xyrs.R;
 import com.sk.xyrs.base.BaseFragment;
 import com.sk.xyrs.base.MyCallBack;
 import com.sk.xyrs.base.SpaceItemDecoration;
+import com.sk.xyrs.module.my.activity.CompleteDataActivity;
 import com.sk.xyrs.module.my.activity.SettingActivity;
 import com.sk.xyrs.module.my.network.ApiRequest;
 import com.sk.xyrs.module.my.network.response.LableObj;
@@ -239,7 +240,7 @@ public class MyFragment extends BaseFragment {
                 @Override
                 public void onSuccess(List<LableObj> list, int errorCode, String msg) {
                     if(notEmpty(list)){
-//                        showSelectFlag(list);
+                        showSelectFlag(list);
                     }
                 }
             });
@@ -340,6 +341,7 @@ public class MyFragment extends BaseFragment {
             case R.id.tv_my_recharge:
                 break;
             case R.id.tv_my_edit:
+                STActivity(CompleteDataActivity.class);
                 break;
             case R.id.tv_my_wdwz:
                 break;
